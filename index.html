@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,30 +30,30 @@ color:inherit;
 }
 
 
-/* NAV */
+/* NAVIGATION */
 
 nav{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-height:80px;
+height:76px;
 padding:0 5.5%;
 display:flex;
 align-items:center;
 justify-content:space-between;
 z-index:1000;
-background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
+background:linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
 }
 
 .logo{
-font-size:22px;
+font-size:21px;
 font-weight:900;
 letter-spacing:1px;
 }
 
 .logo span{
-color:#e1bb24;
+color:#e2bb21;
 }
 
 nav ul{
@@ -70,7 +69,7 @@ transition:.3s;
 }
 
 nav a:hover{
-color:#e1bb24;
+color:#e2bb21;
 }
 
 
@@ -88,9 +87,9 @@ overflow:hidden;
 background:
 linear-gradient(
 90deg,
-rgba(0,0,0,.93) 0%,
-rgba(0,0,0,.70) 45%,
-rgba(0,0,0,.20) 100%
+rgba(0,0,0,.94) 0%,
+rgba(0,0,0,.72) 44%,
+rgba(0,0,0,.18) 100%
 ),
 url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90')
 center/cover no-repeat;
@@ -99,8 +98,8 @@ center/cover no-repeat;
 .hero::after{
 content:"";
 position:absolute;
-bottom:0;
 left:0;
+bottom:0;
 width:100%;
 height:180px;
 background:linear-gradient(transparent,#050505);
@@ -110,34 +109,34 @@ background:linear-gradient(transparent,#050505);
 position:relative;
 z-index:2;
 max-width:1000px;
-animation:heroIn 1.2s ease;
+animation:heroIn 1.1s ease;
 }
 
 .eyebrow{
 font-size:12px;
-font-weight:bold;
 letter-spacing:6px;
-color:#e1bb24;
+font-weight:bold;
+color:#e2bb21;
 margin-bottom:28px;
 }
 
 .hero h1{
-font-size:clamp(60px,7vw,105px);
+font-size:clamp(58px,7vw,105px);
 line-height:.93;
 letter-spacing:-4px;
 font-weight:900;
-margin-bottom:32px;
+margin-bottom:30px;
 }
 
 .hero h1 span{
-color:#e1bb24;
+color:#e2bb21;
 }
 
 .hero-description{
 font-size:20px;
-max-width:650px;
 line-height:1.6;
-color:#d0d0d0;
+max-width:650px;
+color:#ccc;
 margin-bottom:38px;
 }
 
@@ -150,9 +149,9 @@ flex-wrap:wrap;
 .button{
 display:inline-block;
 padding:16px 30px;
-border-radius:50px;
-background:#e1bb24;
+background:#e2bb21;
 color:#050505;
+border-radius:50px;
 text-decoration:none;
 font-size:13px;
 font-weight:bold;
@@ -173,18 +172,7 @@ color:white;
 
 .button-outline:hover{
 background:white;
-color:black;
-}
-
-.scroll{
-position:absolute;
-bottom:35px;
-left:5.5%;
-z-index:3;
-font-size:10px;
-letter-spacing:4px;
-color:#888;
-animation:scrollMove 2s infinite;
+color:#050505;
 }
 
 
@@ -199,7 +187,7 @@ margin:auto;
 .section-number{
 font-size:11px;
 letter-spacing:3px;
-color:#e1bb24;
+color:#e2bb21;
 margin-bottom:25px;
 }
 
@@ -219,19 +207,18 @@ color:#555;
 /* ARENA */
 
 .arena{
-padding:80px 5.5% 140px;
-position:relative;
+padding:90px 5.5% 150px;
 }
 
 .arena-header{
 display:flex;
 justify-content:space-between;
 align-items:flex-end;
-margin-bottom:35px;
+margin-bottom:45px;
 }
 
 .arena-header h2{
-font-size:clamp(46px,6vw,80px);
+font-size:clamp(50px,6vw,82px);
 letter-spacing:-4px;
 }
 
@@ -241,24 +228,24 @@ letter-spacing:3px;
 color:#777;
 }
 
-.arena-wrapper{
-position:relative;
+.arena-layout{
+display:grid;
+grid-template-columns:1fr 42%;
+gap:55px;
+align-items:stretch;
 }
 
 .sport-list{
-position:relative;
-z-index:2;
-border-top:1px solid #2b2b2b;padding-right:370px
+border-top:1px solid #2d2d2d;
 }
 
 .sport-item{
 display:grid;
-grid-template-columns:70px 1fr 80px;
+grid-template-columns:50px 1fr 40px;
 align-items:center;
-min-height:90px;
-border-bottom:1px solid #2b2b2b;
+min-height:92px;
+border-bottom:1px solid #2d2d2d;
 cursor:pointer;
-position:relative;
 transition:.35s;
 }
 
@@ -269,89 +256,88 @@ color:#666;
 }
 
 .sport-item h3{
-font-size:clamp(35px,4vw,60px);
+font-size:clamp(34px,4vw,58px);
 font-weight:800;
-text-align:left;padding-left:40px;
-transition:.4s;
+transition:.35s;
 }
 
 .sport-arrow{
-font-size:25px;
+font-size:24px;
 text-align:right;
-transition:.4s;
+transition:.35s;
 }
 
-.sport-item:hover h3{
-color:#e1bb24;
-transform:translateX(-20px);
+.sport-item:hover h3,
+.sport-item.active h3{
+color:#e2bb21;
+transform:translateX(12px);
 }
 
-.sport-item:hover .sport-arrow{
-color:#e1bb24;
-transform:translateX(10px);
+.sport-item:hover .sport-arrow,
+.sport-item.active .sport-arrow{
+color:#e2bb21;
+transform:translateX(8px);
 }
 
 .sport-list:hover .sport-item:not(:hover){
-opacity:.28;
+opacity:.35;
 }
 
 
-/* floating image */
+/* ARENA IMAGE PANEL */
 
-.sport-preview{
-position:absolute;
-width:420px;
-height:280px;
-right:3%;
-top:50%;
-z-index:1;
-pointer-events:none;
-opacity:0;
-transform:translateY(-50%) translateX(40px) scale(.95);
-transition:opacity .35s ease, transform .45s ease;
+.arena-image{
+position:relative;
+min-height:555px;
 overflow:hidden;
-border-radius:10px;
-box-shadow:0 25px 70px rgba(0,0,0,.65);
-border:1px solid rgba(255,255,255,.12);
-}
-position:absolute;
-width:390px;
-height:260px;
-right:11%;
-top:0;
-z-index:10;
-pointer-events:none;
-opacity:0;
-transform:
-translateY(20px)
-rotate(-4deg)
-scale(.92);
-transition:
-opacity .25s ease,
-transform .35s ease;
-overflow:hidden;
-box-shadow:0 30px 70px rgba(0,0,0,.55);
-}
-border:1px solid rgba(255,255,255,.15);
-.sport-preview.show{
-opacity:1;
-transform:translateY(-50%) translateX(0) scale(1);
-}
-opacity:1;
-transform:
-translateY(0)
-rotate(-4deg)
-scale(1);
+background:#111;
 }
 
-.sport-preview img{
+.arena-image img{
 width:100%;
 height:100%;
+position:absolute;
+inset:0;
 object-fit:cover;
+transition:
+opacity .45s ease,
+transform .7s ease;
+}
+
+.arena-image:hover img{
+transform:scale(1.04);
+}
+
+.arena-image::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(to top,rgba(0,0,0,.65),transparent 55%);
+pointer-events:none;
+}
+
+.arena-label{
+position:absolute;
+left:28px;
+bottom:26px;
+z-index:2;
+}
+
+.arena-label small{
+display:block;
+color:#e2bb21;
+font-size:10px;
+letter-spacing:3px;
+margin-bottom:8px;
+}
+
+.arena-label h4{
+font-size:28px;
 }
 
 
-/* COLLAB */
+/* COLLABORATIONS */
 
 .collaborations{
 padding:130px 6%;
@@ -366,11 +352,11 @@ margin-top:60px;
 }
 
 .collab-card{
-height:550px;
+height:540px;
 position:relative;
 overflow:hidden;
 opacity:0;
-transform:translateY(50px);
+transform:translateY(45px);
 transition:.8s;
 }
 
@@ -399,16 +385,13 @@ display:flex;
 flex-direction:column;
 justify-content:flex-end;
 padding:30px;
-background:linear-gradient(
-transparent 35%,
-rgba(0,0,0,.95)
-);
+background:linear-gradient(transparent 35%,rgba(0,0,0,.95));
 }
 
 .collab-overlay small{
 font-size:10px;
 letter-spacing:3px;
-color:#e1bb24;
+color:#e2bb21;
 margin-bottom:10px;
 }
 
@@ -439,8 +422,8 @@ transition:.3s;
 }
 
 .service-tags span:hover{
-background:#e1bb24;
-border-color:#e1bb24;
+background:#e2bb21;
+border-color:#e2bb21;
 color:#050505;
 transform:translateY(-3px);
 }
@@ -449,19 +432,19 @@ transform:translateY(-3px);
 /* CONTACT */
 
 .contact{
-min-height:80vh;
+min-height:78vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
 padding:100px 7%;
-background:#e1bb24;
+background:#e2bb21;
 color:#050505;
 }
 
 .contact h2{
-font-size:clamp(60px,9vw,130px);
-line-height:.85;
+font-size:clamp(58px,9vw,125px);
+line-height:.86;
 letter-spacing:-6px;
 margin-bottom:35px;
 }
@@ -473,7 +456,7 @@ margin-bottom:35px;
 
 .contact .button{
 background:#050505;
-color:white;
+color:#fff;
 }
 
 
@@ -483,8 +466,8 @@ color:white;
 position:fixed;
 right:25px;
 bottom:25px;
-width:65px;
-height:65px;
+width:64px;
+height:64px;
 border-radius:50%;
 background:#25d366;
 display:flex;
@@ -508,10 +491,9 @@ footer{
 padding:35px 6%;
 display:flex;
 justify-content:space-between;
-background:#050505;
-color:#666;
 font-size:11px;
 letter-spacing:1px;
+color:#666;
 }
 
 
@@ -525,17 +507,6 @@ transform:translateY(45px);
 to{
 opacity:1;
 transform:translateY(0);
-}
-}
-
-@keyframes scrollMove{
-0%,100%{
-opacity:.4;
-transform:translateY(0);
-}
-50%{
-opacity:1;
-transform:translateY(8px);
 }
 }
 
@@ -588,19 +559,23 @@ display:block;
 margin-top:15px;
 }
 
+.arena-layout{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.arena-image{
+min-height:350px;
+order:-1;
+}
+
 .sport-item{
-grid-template-columns:35px 1fr 35px;
-min-height:78px;
+grid-template-columns:35px 1fr 30px;
+min-height:74px;
 }
 
 .sport-item h3{
 font-size:30px;
-text-align:left;
-padding-left:20px;
-}
-
-.sport-preview{
-display:none;
 }
 
 .sport-list:hover .sport-item:not(:hover){
@@ -629,7 +604,6 @@ line-height:2;
 </style>
 </head>
 
-
 <body>
 
 
@@ -648,8 +622,6 @@ ENORMOUS <span>VENTURE</span>
 
 </nav>
 
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -670,11 +642,11 @@ Connecting brands, events and experiences with legendary names in sport.
 
 <div class="buttons">
 
-<a class="button" href="#arena">
+<a href="#arena" class="button">
 EXPLORE TALENTS →
 </a>
 
-<a class="button button-outline" href="#contact">
+<a href="#contact" class="button button-outline">
 WORK WITH US
 </a>
 
@@ -682,14 +654,8 @@ WORK WITH US
 
 </div>
 
-<div class="scroll">
-SCROLL TO DISCOVER ↓
-</div>
-
 </section>
 
-
-<!-- INTRO -->
 
 <section class="intro">
 
@@ -705,8 +671,6 @@ We connect ambitious brands with
 </section>
 
 
-<!-- ARENA -->
-
 <section class="arena" id="arena">
 
 <div class="arena-header">
@@ -718,30 +682,19 @@ We connect ambitious brands with
 </div>
 
 
-<div class="arena-wrapper">
-
-
-<div class="sport-preview" id="sportPreview">
-
-<img
-id="previewImage"
-src=""
-alt="Sport">
-
-</div>
+<div class="arena-layout">
 
 
 <div class="sport-list">
 
 
 <div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=90">
+class="sport-item active"
+data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=90"
+data-name="Football">
 
 <span class="sport-number">01</span>
-
 <h3>FOOTBALL</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
@@ -749,12 +702,11 @@ data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=fo
 
 <div
 class="sport-item"
-data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=90">
+data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=90"
+data-name="Basketball">
 
 <span class="sport-number">02</span>
-
 <h3>BASKETBALL</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
@@ -762,12 +714,11 @@ data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=forma
 
 <div
 class="sport-item"
-data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1000&q=90">
+data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=90"
+data-name="Boxing">
 
 <span class="sport-number">03</span>
-
 <h3>BOXING</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
@@ -775,12 +726,11 @@ data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=forma
 
 <div
 class="sport-item"
-data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=1000&q=90">
+data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=1200&q=90"
+data-name="Snooker">
 
 <span class="sport-number">04</span>
-
 <h3>SNOOKER</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
@@ -788,12 +738,11 @@ data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=fo
 
 <div
 class="sport-item"
-data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=90">
+data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=90"
+data-name="Motorsport">
 
 <span class="sport-number">05</span>
-
 <h3>MOTORSPORT</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
@@ -801,25 +750,43 @@ data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=fo
 
 <div
 class="sport-item"
-data-image="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=90">
+data-image="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=90"
+data-name="More Sports">
 
 <span class="sport-number">06</span>
-
 <h3>MORE</h3>
-
 <span class="sport-arrow">→</span>
 
 </div>
 
 
 </div>
+
+
+<div class="arena-image">
+
+<img
+id="arenaPreview"
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=90"
+alt="Sport preview">
+
+<div class="arena-label">
+
+<small>EXPLORE</small>
+
+<h4 id="arenaName">
+Football
+</h4>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
-
-<!-- COLLABORATIONS -->
 
 <section class="collaborations" id="collaborations">
 
@@ -842,11 +809,8 @@ More than an appearance.
 src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
-
 <small>GLOBAL CAMPAIGNS</small>
-
 <h3>Brand Endorsements</h3>
-
 </div>
 
 </div>
@@ -858,11 +822,8 @@ src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=c
 src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
-
 <small>LIVE EXPERIENCES</small>
-
 <h3>Talent Appearances</h3>
-
 </div>
 
 </div>
@@ -874,11 +835,8 @@ src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fi
 src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
-
 <small>EXCLUSIVE ACCESS</small>
-
 <h3>Private & Corporate Events</h3>
-
 </div>
 
 </div>
@@ -888,8 +846,6 @@ src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fi
 
 </section>
 
-
-<!-- SERVICES -->
 
 <section class="services" id="services">
 
@@ -906,27 +862,18 @@ One icon.
 <div class="service-tags">
 
 <span>Brand Endorsements</span>
-
 <span>Meet & Greets</span>
-
 <span>Corporate Events</span>
-
 <span>Product Launches</span>
-
 <span>Private Appearances</span>
-
 <span>Social Campaigns</span>
-
 <span>Speaking Engagements</span>
-
 <span>Brand Activations</span>
 
 </div>
 
 </section>
 
-
-<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
@@ -980,45 +927,48 @@ GLOBAL SPORTS COLLABORATIONS
 
 <script>
 
-/* SPORT HOVER IMAGE */
+/* ARENA IMAGE CHANGE */
 
 const sportItems =
 document.querySelectorAll('.sport-item');
 
-const sportPreview =
-document.getElementById('sportPreview');
+const arenaPreview =
+document.getElementById('arenaPreview');
 
-const previewImage =
-document.getElementById('previewImage');
+const arenaName =
+document.getElementById('arenaName');
 
 
 sportItems.forEach(item => {
 
 item.addEventListener('mouseenter', () => {
 
-const image = item.dataset.image;
+sportItems.forEach(x =>
+x.classList.remove('active')
+);
 
-previewImage.src = image;
+item.classList.add('active');
 
-sportPreview.classList.add('show');
+arenaPreview.style.opacity = 0;
+
+setTimeout(() => {
+
+arenaPreview.src =
+item.dataset.image;
+
+arenaName.textContent =
+item.dataset.name;
+
+arenaPreview.style.opacity = 1;
+
+},180);
+
+});
 
 });
 
 
-item.addEventListener('mouseleave', () => {
-
-sportPreview.classList.remove('show');
-
-});
-
-});
-
-
-/* MOVE IMAGE SLIGHTLY WITH MOUSE */
-
-
-
-/* CARD SCROLL ANIMATION */
+/* COLLABORATION SCROLL ANIMATION */
 
 const cards =
 document.querySelectorAll('.collab-card');
@@ -1029,9 +979,7 @@ new IntersectionObserver(entries => {
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
-
 entry.target.classList.add('show');
-
 }
 
 });
