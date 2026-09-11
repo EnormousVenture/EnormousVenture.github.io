@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,6 @@
 <title>Enormous Venture | Global Sports Collaborations</title>
 
 <style>
-
-/* ---------- BASIC ---------- */
 
 *{
 margin:0;
@@ -21,7 +20,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#050505;
 color:#fff;
 overflow-x:hidden;
@@ -32,7 +31,7 @@ color:inherit;
 }
 
 
-/* ---------- NAVIGATION ---------- */
+/* NAV */
 
 nav{
 position:fixed;
@@ -40,27 +39,27 @@ top:0;
 left:0;
 width:100%;
 height:80px;
-padding:0 7%;
+padding:0 5.5%;
 display:flex;
 align-items:center;
 justify-content:space-between;
 z-index:1000;
-background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
+background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
 }
 
 .logo{
-font-size:21px;
+font-size:22px;
 font-weight:900;
 letter-spacing:1px;
 }
 
 .logo span{
-color:#d7b536;
+color:#e1bb24;
 }
 
 nav ul{
 display:flex;
-gap:32px;
+gap:34px;
 list-style:none;
 }
 
@@ -71,11 +70,11 @@ transition:.3s;
 }
 
 nav a:hover{
-color:#d7b536;
+color:#e1bb24;
 }
 
 
-/* ---------- HERO ---------- */
+/* HERO */
 
 .hero{
 height:100vh;
@@ -83,13 +82,14 @@ min-height:700px;
 position:relative;
 display:flex;
 align-items:center;
-padding:0 7%;
+padding:0 5.5%;
 overflow:hidden;
 
 background:
-linear-gradient(90deg,
-rgba(0,0,0,.92) 0%,
-rgba(0,0,0,.70) 43%,
+linear-gradient(
+90deg,
+rgba(0,0,0,.93) 0%,
+rgba(0,0,0,.70) 45%,
 rgba(0,0,0,.20) 100%
 ),
 url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90')
@@ -99,10 +99,10 @@ center/cover no-repeat;
 .hero::after{
 content:"";
 position:absolute;
-left:0;
 bottom:0;
+left:0;
 width:100%;
-height:200px;
+height:180px;
 background:linear-gradient(transparent,#050505);
 }
 
@@ -110,34 +110,34 @@ background:linear-gradient(transparent,#050505);
 position:relative;
 z-index:2;
 max-width:1000px;
-animation:heroEntrance 1.2s ease;
+animation:heroIn 1.2s ease;
 }
 
 .eyebrow{
 font-size:12px;
-letter-spacing:5px;
 font-weight:bold;
-color:#d7b536;
-margin-bottom:25px;
+letter-spacing:6px;
+color:#e1bb24;
+margin-bottom:28px;
 }
 
 .hero h1{
-font-size:clamp(55px,7.5vw,110px);
-line-height:.91;
-letter-spacing:-5px;
+font-size:clamp(60px,7vw,105px);
+line-height:.93;
+letter-spacing:-4px;
 font-weight:900;
-margin-bottom:30px;
+margin-bottom:32px;
 }
 
 .hero h1 span{
-color:#d7b536;
+color:#e1bb24;
 }
 
 .hero-description{
-max-width:660px;
 font-size:20px;
+max-width:650px;
 line-height:1.6;
-color:#ccc;
+color:#d0d0d0;
 margin-bottom:38px;
 }
 
@@ -150,10 +150,10 @@ flex-wrap:wrap;
 .button{
 display:inline-block;
 padding:16px 30px;
-background:#d7b536;
+border-radius:50px;
+background:#e1bb24;
 color:#050505;
 text-decoration:none;
-border-radius:50px;
 font-size:13px;
 font-weight:bold;
 letter-spacing:1px;
@@ -161,14 +161,14 @@ transition:.3s;
 }
 
 .button:hover{
-transform:translateY(-4px);
 background:white;
+transform:translateY(-4px);
 }
 
 .button-outline{
 background:transparent;
+border:1px solid rgba(255,255,255,.6);
 color:white;
-border:1px solid rgba(255,255,255,.5);
 }
 
 .button-outline:hover{
@@ -178,9 +178,9 @@ color:black;
 
 .scroll{
 position:absolute;
-z-index:3;
 bottom:35px;
-left:7%;
+left:5.5%;
+z-index:3;
 font-size:10px;
 letter-spacing:4px;
 color:#888;
@@ -188,7 +188,7 @@ animation:scrollMove 2s infinite;
 }
 
 
-/* ---------- INTRO ---------- */
+/* INTRO */
 
 .intro{
 padding:150px 7%;
@@ -197,18 +197,18 @@ margin:auto;
 }
 
 .section-number{
-color:#d7b536;
-font-size:12px;
+font-size:11px;
 letter-spacing:3px;
+color:#e1bb24;
 margin-bottom:25px;
 }
 
 .big-copy{
-font-size:clamp(38px,5vw,76px);
+font-size:clamp(40px,5vw,75px);
 line-height:1.05;
+letter-spacing:-2px;
 font-weight:800;
 max-width:1200px;
-letter-spacing:-2px;
 }
 
 .big-copy span{
@@ -216,85 +216,128 @@ color:#555;
 }
 
 
-/* ---------- SPORTS ---------- */
+/* ARENA */
 
-.sports{
-padding:70px 7% 150px;
+.arena{
+padding:80px 5.5% 140px;
+position:relative;
 }
 
-.section-heading{
+.arena-header{
 display:flex;
 justify-content:space-between;
-align-items:end;
-margin-bottom:55px;
+align-items:flex-end;
+margin-bottom:35px;
 }
 
-.section-heading h2{
-font-size:clamp(42px,6vw,80px);
-letter-spacing:-3px;
+.arena-header h2{
+font-size:clamp(46px,6vw,80px);
+letter-spacing:-4px;
 }
 
-.section-heading p{
+.arena-header span{
+font-size:10px;
+letter-spacing:3px;
 color:#777;
-font-size:12px;
-letter-spacing:2px;
+}
+
+.arena-wrapper{
+position:relative;
 }
 
 .sport-list{
-border-top:1px solid #333;
+position:relative;
+z-index:3;
+border-top:1px solid #2b2b2b;
 }
 
 .sport-item{
-position:relative;
-display:flex;
+display:grid;
+grid-template-columns:70px 1fr 80px;
 align-items:center;
-justify-content:space-between;
-padding:35px 10px;
-border-bottom:1px solid #333;
+min-height:90px;
+border-bottom:1px solid #2b2b2b;
 cursor:pointer;
-transition:.4s;
-overflow:hidden;
+position:relative;
+transition:.35s;
+}
+
+.sport-number{
+font-size:9px;
+letter-spacing:2px;
+color:#666;
 }
 
 .sport-item h3{
-font-size:clamp(35px,5vw,70px);
-font-weight:700;
-transition:.4s;
-position:relative;
-z-index:2;
-}
-
-.sport-item .number{
-font-size:12px;
-color:#777;
-letter-spacing:2px;
-}
-
-.sport-item .arrow{
-font-size:30px;
+font-size:clamp(35px,4vw,60px);
+font-weight:800;
+text-align:center;
 transition:.4s;
 }
 
-.sport-item:hover{
-padding-left:30px;
-background:#101010;
+.sport-arrow{
+font-size:25px;
+text-align:right;
+transition:.4s;
 }
 
 .sport-item:hover h3{
-color:#d7b536;
+color:#e1bb24;
+transform:translateX(-20px);
 }
 
-.sport-item:hover .arrow{
+.sport-item:hover .sport-arrow{
+color:#e1bb24;
 transform:translateX(10px);
-color:#d7b536;
+}
+
+.sport-list:hover .sport-item:not(:hover){
+opacity:.28;
 }
 
 
-/* ---------- COLLABORATIONS ---------- */
+/* floating image */
+
+.sport-preview{
+position:absolute;
+width:390px;
+height:260px;
+right:11%;
+top:0;
+z-index:2;
+pointer-events:none;
+opacity:0;
+transform:
+translateY(20px)
+rotate(-4deg)
+scale(.92);
+transition:
+opacity .25s ease,
+transform .35s ease;
+overflow:hidden;
+box-shadow:0 30px 70px rgba(0,0,0,.55);
+}
+
+.sport-preview.show{
+opacity:1;
+transform:
+translateY(0)
+rotate(-4deg)
+scale(1);
+}
+
+.sport-preview img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+
+/* COLLAB */
 
 .collaborations{
-padding:120px 7%;
-background:#0c0c0c;
+padding:130px 6%;
+background:#0b0b0b;
 }
 
 .collab-grid{
@@ -308,7 +351,6 @@ margin-top:60px;
 height:550px;
 position:relative;
 overflow:hidden;
-border-radius:3px;
 opacity:0;
 transform:translateY(50px);
 transition:.8s;
@@ -328,23 +370,27 @@ transition:.7s;
 }
 
 .collab-card:hover img{
-transform:scale(1.07);
+transform:scale(1.06);
 filter:grayscale(0%);
 }
 
 .collab-overlay{
 position:absolute;
 inset:0;
-background:linear-gradient(transparent 40%,rgba(0,0,0,.95));
 display:flex;
 flex-direction:column;
 justify-content:flex-end;
 padding:30px;
+background:linear-gradient(
+transparent 35%,
+rgba(0,0,0,.95)
+);
 }
 
 .collab-overlay small{
-color:#d7b536;
-letter-spacing:2px;
+font-size:10px;
+letter-spacing:3px;
+color:#e1bb24;
 margin-bottom:10px;
 }
 
@@ -353,7 +399,7 @@ font-size:28px;
 }
 
 
-/* ---------- SERVICES ---------- */
+/* SERVICES */
 
 .services{
 padding:150px 7%;
@@ -368,68 +414,68 @@ margin-top:50px;
 
 .service-tags span{
 border:1px solid #333;
-padding:16px 22px;
 border-radius:50px;
+padding:16px 22px;
 font-size:14px;
 transition:.3s;
 }
 
 .service-tags span:hover{
-background:#d7b536;
-border-color:#d7b536;
-color:black;
+background:#e1bb24;
+border-color:#e1bb24;
+color:#050505;
 transform:translateY(-3px);
 }
 
 
-/* ---------- CONTACT ---------- */
+/* CONTACT */
 
 .contact{
 min-height:80vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:100px 7%;
-background:#d7b536;
+background:#e1bb24;
 color:#050505;
 }
 
-.contact-content h2{
-font-size:clamp(55px,9vw,130px);
+.contact h2{
+font-size:clamp(60px,9vw,130px);
 line-height:.85;
 letter-spacing:-6px;
 margin-bottom:35px;
 }
 
-.contact-content p{
+.contact p{
 font-size:19px;
 margin-bottom:35px;
 }
 
 .contact .button{
-background:black;
+background:#050505;
 color:white;
 }
 
 
-/* ---------- WHATSAPP ---------- */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
 right:25px;
 bottom:25px;
-width:64px;
-height:64px;
+width:65px;
+height:65px;
 border-radius:50%;
-background:#25D366;
+background:#25d366;
 display:flex;
 align-items:center;
 justify-content:center;
-text-decoration:none;
 font-size:28px;
+text-decoration:none;
 z-index:999;
-box-shadow:0 10px 35px rgba(0,0,0,.4);
+box-shadow:0 12px 35px rgba(0,0,0,.45);
 transition:.3s;
 }
 
@@ -438,50 +484,45 @@ transform:scale(1.12);
 }
 
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 footer{
-padding:35px 7%;
-background:#050505;
+padding:35px 6%;
 display:flex;
 justify-content:space-between;
+background:#050505;
 color:#666;
-font-size:12px;
+font-size:11px;
+letter-spacing:1px;
 }
 
 
-/* ---------- ANIMATIONS ---------- */
+/* ANIMATION */
 
-@keyframes heroEntrance{
-
+@keyframes heroIn{
 from{
 opacity:0;
 transform:translateY(45px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
 @keyframes scrollMove{
-
 0%,100%{
-transform:translateY(0);
 opacity:.4;
+transform:translateY(0);
 }
-
 50%{
-transform:translateY(8px);
 opacity:1;
+transform:translateY(8px);
+}
 }
 
-}
 
-
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -500,29 +541,52 @@ font-size:17px;
 
 .hero{
 padding:0 5%;
-min-height:100vh;
 background-position:65% center;
 }
 
 .hero h1{
-font-size:52px;
-letter-spacing:-3px;
+font-size:50px;
+letter-spacing:-2px;
 }
 
 .hero-description{
 font-size:16px;
 }
 
-.scroll{
-left:5%;
-}
-
 .intro,
-.sports,
+.arena,
 .collaborations,
 .services{
 padding-left:5%;
 padding-right:5%;
+}
+
+.arena-header{
+display:block;
+}
+
+.arena-header span{
+display:block;
+margin-top:15px;
+}
+
+.sport-item{
+grid-template-columns:35px 1fr 35px;
+min-height:78px;
+}
+
+.sport-item h3{
+font-size:30px;
+text-align:left;
+padding-left:20px;
+}
+
+.sport-preview{
+display:none;
+}
+
+.sport-list:hover .sport-item:not(:hover){
+opacity:1;
 }
 
 .collab-grid{
@@ -530,18 +594,10 @@ grid-template-columns:1fr;
 }
 
 .collab-card{
-height:480px;
+height:470px;
 }
 
-.section-heading{
-display:block;
-}
-
-.section-heading p{
-margin-top:15px;
-}
-
-.contact-content h2{
+.contact h2{
 letter-spacing:-3px;
 }
 
@@ -559,8 +615,6 @@ line-height:2;
 <body>
 
 
-<!-- NAVIGATION -->
-
 <nav>
 
 <div class="logo">
@@ -568,7 +622,7 @@ ENORMOUS <span>VENTURE</span>
 </div>
 
 <ul>
-<li><a href="#sports">Sports</a></li>
+<li><a href="#arena">Sports</a></li>
 <li><a href="#collaborations">Collaborations</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -598,11 +652,11 @@ Connecting brands, events and experiences with legendary names in sport.
 
 <div class="buttons">
 
-<a href="#sports" class="button">
+<a class="button" href="#arena">
 EXPLORE TALENTS →
 </a>
 
-<a href="#contact" class="button button-outline">
+<a class="button button-outline" href="#contact">
 WORK WITH US
 </a>
 
@@ -633,55 +687,113 @@ We connect ambitious brands with
 </section>
 
 
-<!-- SPORTS -->
+<!-- ARENA -->
 
-<section class="sports" id="sports">
+<section class="arena" id="arena">
 
-<div class="section-heading">
+<div class="arena-header">
 
 <h2>THE ARENA.</h2>
 
-<p>EXPLORE BY SPORT</p>
+<span>EXPLORE BY SPORT</span>
+
+</div>
+
+
+<div class="arena-wrapper">
+
+
+<div class="sport-preview" id="sportPreview">
+
+<img
+id="previewImage"
+src=""
+alt="Sport">
 
 </div>
 
 
 <div class="sport-list">
 
-<div class="sport-item">
-<span class="number">01</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">01</span>
+
 <h3>FOOTBALL</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
 </div>
 
-<div class="sport-item">
-<span class="number">02</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">02</span>
+
 <h3>BASKETBALL</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
 </div>
 
-<div class="sport-item">
-<span class="number">03</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">03</span>
+
 <h3>BOXING</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
 </div>
 
-<div class="sport-item">
-<span class="number">04</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">04</span>
+
 <h3>SNOOKER</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
 </div>
 
-<div class="sport-item">
-<span class="number">05</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">05</span>
+
 <h3>MOTORSPORT</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
 </div>
 
-<div class="sport-item">
-<span class="number">06</span>
+
+<div
+class="sport-item"
+data-image="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=90">
+
+<span class="sport-number">06</span>
+
 <h3>MORE</h3>
-<span class="arrow">→</span>
+
+<span class="sport-arrow">→</span>
+
+</div>
+
+
 </div>
 
 </div>
@@ -705,15 +817,18 @@ More than an appearance.
 
 <div class="collab-grid">
 
+
 <div class="collab-card">
 
 <img
-src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85"
-alt="Sports collaboration">
+src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
+
 <small>GLOBAL CAMPAIGNS</small>
+
 <h3>Brand Endorsements</h3>
+
 </div>
 
 </div>
@@ -722,12 +837,14 @@ alt="Sports collaboration">
 <div class="collab-card">
 
 <img
-src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85"
-alt="Athlete event">
+src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
+
 <small>LIVE EXPERIENCES</small>
+
 <h3>Talent Appearances</h3>
+
 </div>
 
 </div>
@@ -736,15 +853,18 @@ alt="Athlete event">
 <div class="collab-card">
 
 <img
-src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=85"
-alt="Sport event">
+src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=85">
 
 <div class="collab-overlay">
+
 <small>EXCLUSIVE ACCESS</small>
+
 <h3>Private & Corporate Events</h3>
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -764,15 +884,23 @@ One icon.
 <span>Endless possibilities.</span>
 </div>
 
+
 <div class="service-tags">
 
 <span>Brand Endorsements</span>
+
 <span>Meet & Greets</span>
+
 <span>Corporate Events</span>
+
 <span>Product Launches</span>
+
 <span>Private Appearances</span>
+
 <span>Social Campaigns</span>
+
 <span>Speaking Engagements</span>
+
 <span>Brand Activations</span>
 
 </div>
@@ -784,7 +912,7 @@ One icon.
 
 <section class="contact" id="contact">
 
-<div class="contact-content">
+<div>
 
 <h2>
 YOUR BRAND.<br>
@@ -799,7 +927,9 @@ Let's create something unforgettable together.
 href="https://wa.me/60178857511"
 target="_blank"
 class="button">
+
 START A COLLABORATION →
+
 </a>
 
 </div>
@@ -807,18 +937,15 @@ START A COLLABORATION →
 </section>
 
 
-<!-- WHATSAPP -->
-
 <a
 class="whatsapp"
 href="https://wa.me/60178857511"
-target="_blank"
-aria-label="WhatsApp">
+target="_blank">
+
 💬
+
 </a>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -835,11 +962,68 @@ GLOBAL SPORTS COLLABORATIONS
 
 <script>
 
-/* Animate collaboration cards when scrolling */
+/* SPORT HOVER IMAGE */
 
-const cards = document.querySelectorAll('.collab-card');
+const sportItems =
+document.querySelectorAll('.sport-item');
 
-const observer = new IntersectionObserver(entries => {
+const sportPreview =
+document.getElementById('sportPreview');
+
+const previewImage =
+document.getElementById('previewImage');
+
+
+sportItems.forEach(item => {
+
+item.addEventListener('mouseenter', () => {
+
+const image = item.dataset.image;
+
+previewImage.src = image;
+
+sportPreview.classList.add('show');
+
+});
+
+
+item.addEventListener('mouseleave', () => {
+
+sportPreview.classList.remove('show');
+
+});
+
+});
+
+
+/* MOVE IMAGE SLIGHTLY WITH MOUSE */
+
+document.querySelector('.arena')
+.addEventListener('mousemove', e => {
+
+if(window.innerWidth > 800){
+
+const rect =
+document.querySelector('.arena').getBoundingClientRect();
+
+const y =
+e.clientY - rect.top;
+
+sportPreview.style.top =
+Math.max(30,y-130) + 'px';
+
+}
+
+});
+
+
+/* CARD SCROLL ANIMATION */
+
+const cards =
+document.querySelectorAll('.collab-card');
+
+const observer =
+new IntersectionObserver(entries => {
 
 entries.forEach(entry => {
 
@@ -852,10 +1036,12 @@ entry.target.classList.add('show');
 });
 
 },{
-threshold:0.15
+threshold:.15
 });
 
-cards.forEach(card => observer.observe(card));
+cards.forEach(card =>
+observer.observe(card)
+);
 
 </script>
 
