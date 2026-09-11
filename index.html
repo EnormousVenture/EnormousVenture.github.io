@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Enormous Venture | Global Sports Icons</title>
+<title>Enormous Venture | Global Sports Collaborations</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
 margin:0;
@@ -19,239 +23,506 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
 background:#050505;
 color:#fff;
+font-family:Arial,Helvetica,sans-serif;
 overflow-x:hidden;
 }
 
-button,a{
-font-family:inherit;
+body.modal-open{
+overflow:hidden;
 }
 
 :root{
---gold:#e4bd23;
+--gold:#e7bd18;
 --black:#050505;
---grey:#8b8b8b;
+--soft:#0b0b0b;
+--line:#252525;
+--grey:#8c8c8c;
+--green:#25d366;
 }
 
 
-/* NAV */
+/* =========================
+   NOISE
+========================= */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:99999;
+opacity:.035;
+background-image:
+url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.75'/%3E%3C/svg%3E");
+}
+
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.cursor-glow{
+position:fixed;
+width:380px;
+height:380px;
+border-radius:50%;
+pointer-events:none;
+z-index:0;
+background:radial-gradient(circle,rgba(231,189,24,.10),transparent 65%);
+transform:translate(-50%,-50%);
+}
+
+
+/* =========================
+   NAV
+========================= */
 
 nav{
 position:fixed;
 top:0;
 left:0;
 right:0;
-height:76px;
-padding:0 5%;
+height:78px;
+padding:0 4.5%;
 display:flex;
-justify-content:space-between;
 align-items:center;
-background:rgba(5,5,5,.94);
-backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(255,255,255,.07);
-z-index:9999;
+justify-content:space-between;
+z-index:10000;
+background:rgba(5,5,5,.74);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
 font-weight:900;
-font-size:21px;
-letter-spacing:1px;
+font-size:22px;
+letter-spacing:.5px;
 }
 
 .logo span{
 color:var(--gold);
 }
 
-nav ul{
+.nav-links{
 display:flex;
-list-style:none;
-gap:30px;
+align-items:center;
+gap:31px;
 }
 
-nav a{
+.nav-links a{
 color:#fff;
+font-size:12px;
 text-decoration:none;
-font-size:13px;
+transition:.25s;
 }
 
-nav a:hover{
+.nav-links a:hover{
 color:var(--gold);
 }
 
+.nav-contact{
+border:1px solid #444;
+padding:11px 18px;
+border-radius:30px;
+}
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
 min-height:100vh;
-padding:150px 5% 80px;
+position:relative;
 display:flex;
 align-items:flex-end;
-position:relative;
+padding:140px 4.5% 70px;
 overflow:hidden;
+}
+
+.hero-bg{
+position:absolute;
+inset:0;
 background:
-linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.56),rgba(0,0,0,.12)),
-url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=90')
+linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.68) 45%,rgba(0,0,0,.18) 100%),
+linear-gradient(to top,rgba(5,5,5,1),transparent 45%),
+url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2200&q=90')
 center/cover;
+transform:scale(1.06);
+animation:heroZoom 14s ease-out forwards;
+}
+
+@keyframes heroZoom{
+to{
+transform:scale(1);
+}
+}
+
+.hero-grid{
+position:absolute;
+inset:0;
+opacity:.12;
+background-image:
+linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+background-size:70px 70px;
+mask-image:linear-gradient(to bottom,black,transparent);
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:1100px;
+width:100%;
 }
 
-.kicker{
-font-size:11px;
+.hero-topline{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:10px;
 letter-spacing:5px;
 color:var(--gold);
 font-weight:bold;
-margin-bottom:25px;
+margin-bottom:28px;
+}
+
+.hero-topline::before{
+content:"";
+width:45px;
+height:1px;
+background:var(--gold);
 }
 
 .hero h1{
-font-size:clamp(65px,9vw,145px);
-line-height:.82;
-letter-spacing:-7px;
+font-size:clamp(70px,10vw,155px);
+line-height:.78;
+letter-spacing:-8px;
 font-weight:900;
+max-width:1250px;
 }
 
-.hero h1 span{
+.hero h1 .outline{
+color:transparent;
+-webkit-text-stroke:1.5px rgba(255,255,255,.58);
+}
+
+.hero h1 .gold{
 color:var(--gold);
 }
 
-.hero p{
-font-size:20px;
+.hero-bottom{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:50px;
+margin-top:43px;
+}
+
+.hero-bottom p{
+max-width:600px;
+font-size:18px;
+color:#bcbcbc;
 line-height:1.6;
-color:#ccc;
-max-width:670px;
-margin:35px 0;
+}
+
+.hero-actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:16px 28px;
-border-radius:50px;
-background:var(--gold);
-color:#050505;
-font-size:12px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:15px 24px;
+border-radius:40px;
+font-size:11px;
 font-weight:bold;
 letter-spacing:1px;
 text-decoration:none;
-border:0;
 cursor:pointer;
-transition:.25s;
+border:1px solid transparent;
+transition:.3s;
+}
+
+.btn.gold{
+background:var(--gold);
+color:#050505;
+}
+
+.btn.dark{
+background:transparent;
+border-color:#555;
+color:#fff;
 }
 
 .btn:hover{
-background:#fff;
 transform:translateY(-3px);
 }
 
 
-/* INTRO */
+/* =========================
+   TICKER
+========================= */
 
-.intro{
-padding:140px 5%;
+.ticker{
+height:75px;
+overflow:hidden;
+border-top:1px solid #1f1f1f;
+border-bottom:1px solid #1f1f1f;
+display:flex;
+align-items:center;
+background:#080808;
 }
 
-.section-label{
+.ticker-track{
+display:flex;
+width:max-content;
+animation:tickerMove 32s linear infinite;
+}
+
+.ticker-track span{
+white-space:nowrap;
+font-size:27px;
+font-weight:900;
+letter-spacing:-1px;
+padding-right:48px;
+}
+
+.ticker-track b{
+color:var(--gold);
+margin-right:48px;
+}
+
+@keyframes tickerMove{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+padding:160px 4.5%;
+position:relative;
+}
+
+.section-num{
 font-size:10px;
 letter-spacing:4px;
 color:var(--gold);
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .intro h2{
-font-size:clamp(46px,6vw,90px);
-line-height:1;
-letter-spacing:-4px;
-max-width:1200px;
+font-size:clamp(55px,7.2vw,115px);
+line-height:.88;
+letter-spacing:-6px;
+max-width:1300px;
 }
 
 .intro h2 span{
-color:#555;
+color:#3c3c3c;
+}
+
+.intro-copy{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+margin-top:70px;
+border-top:1px solid #252525;
+padding-top:35px;
+}
+
+.intro-copy p{
+color:#888;
+font-size:16px;
+line-height:1.8;
+max-width:560px;
 }
 
 
-/* TALENTS */
+/* =========================
+   ARENA
+========================= */
 
-.talents{
-padding:110px 5% 150px;
+.arena{
+padding:130px 4.5% 150px;
 background:#080808;
-scroll-margin-top:75px;
 }
 
-.talent-header{
+.arena-header{
 display:flex;
 justify-content:space-between;
 align-items:flex-end;
 gap:30px;
-margin-bottom:50px;
+margin-bottom:70px;
 }
 
-.talent-header h2{
-font-size:clamp(50px,7vw,95px);
-line-height:.9;
+.arena-header h2{
+font-size:clamp(55px,7vw,100px);
+line-height:.88;
 letter-spacing:-5px;
 }
 
-.talent-header p{
+.arena-header p{
+max-width:410px;
 color:#777;
-max-width:420px;
-line-height:1.6;
+line-height:1.7;
+}
+
+.arena-wrap{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+min-height:650px;
+border-top:1px solid #262626;
+border-bottom:1px solid #262626;
+}
+
+.sport-list{
+padding-right:40px;
+}
+
+.sport-item{
+padding:30px 5px;
+border-bottom:1px solid #222;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+transition:.3s;
+}
+
+.sport-item span:first-child{
+font-size:clamp(32px,4vw,63px);
+font-weight:900;
+letter-spacing:-3px;
+color:#555;
+transition:.3s;
+}
+
+.sport-item small{
+font-size:9px;
+letter-spacing:2px;
+color:#777;
+}
+
+.sport-item.active span:first-child,
+.sport-item:hover span:first-child{
+color:var(--gold);
+transform:translateX(12px);
+}
+
+.arena-image{
+position:relative;
+overflow:hidden;
+background:#111;
+}
+
+.arena-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:grayscale(100%);
+transition:.6s ease;
+}
+
+.arena-image:hover img{
+filter:grayscale(20%);
+transform:scale(1.03);
+}
+
+.arena-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+}
+
+.arena-caption{
+position:absolute;
+left:30px;
+bottom:25px;
+font-size:10px;
+letter-spacing:3px;
+color:#fff;
 }
 
 
-/* FILTER */
+/* =========================
+   ICONS
+========================= */
+
+.icons{
+padding:150px 4.5%;
+}
+
+.icons-header{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:40px;
+margin-bottom:45px;
+}
+
+.icons-header h2{
+font-size:clamp(55px,7vw,105px);
+line-height:.88;
+letter-spacing:-5px;
+}
+
+.icons-header p{
+max-width:420px;
+line-height:1.7;
+color:#777;
+}
 
 .filters{
 display:flex;
-gap:9px;
+gap:8px;
 flex-wrap:wrap;
 margin-bottom:35px;
 }
 
-.filter-btn{
+.filter{
 background:transparent;
-border:1px solid #353535;
-color:#bbb;
+border:1px solid #333;
+color:#aaa;
+padding:11px 17px;
 border-radius:30px;
-padding:11px 18px;
-font-size:10px;
-letter-spacing:1px;
+font-size:9px;
+letter-spacing:1.4px;
 cursor:pointer;
 transition:.25s;
 }
 
-.filter-btn:hover,
-.filter-btn.active{
+.filter.active,
+.filter:hover{
 background:var(--gold);
 border-color:var(--gold);
 color:#050505;
 }
 
-
-/* GRID */
-
 .talent-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:16px;
+gap:13px;
 }
 
 .talent-card{
-height:510px;
+height:520px;
 position:relative;
 overflow:hidden;
-background:#111;
 cursor:pointer;
+background:#111;
 }
 
 .talent-card img{
-position:absolute;
-inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
@@ -263,26 +534,22 @@ transition:.65s ease;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(
-to top,
-rgba(0,0,0,.96),
-rgba(0,0,0,.2) 65%,
-transparent
-);
+background:
+linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.1) 68%,transparent);
 }
 
 .talent-card:hover img{
 transform:scale(1.07);
-filter:grayscale(20%);
+filter:grayscale(15%);
 }
 
 .talent-info{
 position:absolute;
-left:24px;
-right:24px;
-bottom:24px;
 z-index:2;
-transition:.35s;
+left:22px;
+right:22px;
+bottom:22px;
+transition:.3s;
 }
 
 .talent-info small{
@@ -292,18 +559,17 @@ letter-spacing:2px;
 }
 
 .talent-info h3{
-font-size:27px;
+font-size:28px;
 line-height:.95;
 margin-top:10px;
-font-weight:900;
 }
 
-.talent-info .view{
-margin-top:15px;
-font-size:10px;
-letter-spacing:1.5px;
+.talent-view{
+font-size:9px;
+letter-spacing:1.7px;
+margin-top:13px;
 opacity:0;
-transform:translateY(10px);
+transform:translateY(8px);
 transition:.3s;
 }
 
@@ -311,67 +577,116 @@ transition:.3s;
 transform:translateY(-8px);
 }
 
-.talent-card:hover .view{
+.talent-card:hover .talent-view{
 opacity:1;
 transform:none;
 }
 
 
-/* SERVICES */
+/* =========================
+   BIG STATEMENT
+========================= */
 
-.services{
-padding:140px 5%;
-}
-
-.services h2{
-font-size:clamp(48px,6vw,90px);
-line-height:1;
-letter-spacing:-4px;
-max-width:900px;
-}
-
-.services h2 span{
-color:#555;
-}
-
-.tags{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:50px;
-}
-
-.tags span{
-padding:15px 21px;
-border:1px solid #333;
-border-radius:30px;
-font-size:13px;
-}
-
-
-/* CONTACT */
-
-.contact{
-min-height:75vh;
-padding:120px 5%;
+.statement{
+min-height:85vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+padding:120px 5%;
 background:var(--gold);
 color:#050505;
-scroll-margin-top:75px;
+}
+
+.statement h2{
+font-size:clamp(65px,10vw,155px);
+line-height:.78;
+letter-spacing:-8px;
+}
+
+.statement h2 span{
+display:block;
+-webkit-text-stroke:2px #050505;
+color:transparent;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+padding:150px 4.5%;
+}
+
+.services h2{
+font-size:clamp(55px,7vw,100px);
+line-height:.9;
+letter-spacing:-5px;
+}
+
+.service-list{
+margin-top:70px;
+}
+
+.service{
+display:grid;
+grid-template-columns:80px 1fr auto;
+align-items:center;
+border-top:1px solid #252525;
+padding:29px 0;
+}
+
+.service:last-child{
+border-bottom:1px solid #252525;
+}
+
+.service-num{
+color:var(--gold);
+font-size:10px;
+}
+
+.service-name{
+font-size:clamp(27px,3.5vw,53px);
+font-weight:900;
+letter-spacing:-2px;
+}
+
+.service-arrow{
+font-size:25px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+min-height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 5%;
+background:#090909;
 }
 
 .contact h2{
-font-size:clamp(60px,10vw,145px);
+font-size:clamp(65px,10vw,150px);
 line-height:.8;
-letter-spacing:-7px;
+letter-spacing:-8px;
+}
+
+.contact h2 span{
+color:var(--gold);
 }
 
 .contact p{
-margin:35px 0 25px;
-font-size:18px;
+color:#888;
+font-size:17px;
+margin:35px auto;
+max-width:600px;
+line-height:1.7;
 }
 
 .contact-buttons{
@@ -381,27 +696,55 @@ gap:12px;
 flex-wrap:wrap;
 }
 
-.contact .btn{
-background:#050505;
-color:#fff;
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+padding:35px 4.5%;
+display:flex;
+justify-content:space-between;
+gap:30px;
+border-top:1px solid #222;
+font-size:10px;
+letter-spacing:1px;
+color:#666;
 }
 
-.contact .btn:hover{
+
+/* =========================
+   SHORTLIST
+========================= */
+
+.shortlist-btn-fixed{
+position:fixed;
+right:24px;
+bottom:24px;
+z-index:11000;
 background:#fff;
 color:#050505;
+border:0;
+border-radius:40px;
+padding:15px 20px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.96);
-z-index:20000;
+z-index:30000;
 display:none;
 align-items:center;
 justify-content:center;
+background:rgba(0,0,0,.93);
 padding:30px;
 }
 
@@ -410,211 +753,241 @@ display:flex;
 }
 
 .modal-box{
-width:min(1100px,100%);
-height:min(700px,88vh);
+width:min(1150px,100%);
+height:min(720px,90vh);
 display:grid;
-grid-template-columns:1fr 1fr;
-background:#0e0e0e;
-position:relative;
+grid-template-columns:1.05fr .95fr;
+background:#0a0a0a;
+border:1px solid #262626;
 overflow:hidden;
+position:relative;
 }
 
-.modal-photo{
-height:100%;
+.modal-image{
+position:relative;
 }
 
-.modal-photo img{
+.modal-image img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:grayscale(35%);
+filter:grayscale(25%);
+}
+
+.modal-image::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to right,transparent,rgba(0,0,0,.18));
 }
 
 .modal-content{
 padding:65px;
 display:flex;
-flex-direction:column;
 justify-content:center;
+flex-direction:column;
 }
 
 .modal-content small{
 color:var(--gold);
+font-size:9px;
 letter-spacing:3px;
-font-size:10px;
 }
 
 .modal-content h2{
-font-size:clamp(45px,5vw,80px);
-line-height:.9;
+font-size:clamp(50px,5vw,80px);
+line-height:.88;
 letter-spacing:-4px;
-margin:17px 0 25px;
+margin:15px 0 25px;
 }
 
 .modal-content p{
-color:#aaa;
-line-height:1.7;
-margin-bottom:28px;
+color:#8a8a8a;
+line-height:1.75;
+margin-bottom:30px;
 }
 
-.profile-tags{
+.modal-tags{
 display:flex;
 gap:8px;
 flex-wrap:wrap;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
-.profile-tags span{
-padding:9px 13px;
+.modal-tags span{
+font-size:9px;
 border:1px solid #333;
-border-radius:20px;
-font-size:10px;
-color:#bbb;
+padding:8px 11px;
+border-radius:30px;
+color:#aaa;
 }
 
 .modal-actions{
 display:flex;
-gap:10px;
+gap:9px;
 flex-wrap:wrap;
 }
 
-.shortlist-btn{
-padding:15px 21px;
-border-radius:30px;
-border:1px solid #555;
+.modal-close{
+position:absolute;
+top:18px;
+right:21px;
+z-index:10;
 background:transparent;
+border:0;
 color:#fff;
+font-size:30px;
 cursor:pointer;
-font-weight:bold;
 }
 
-.shortlist-btn.active{
+.add-shortlist{
+background:transparent;
+border:1px solid #555;
+color:#fff;
+border-radius:30px;
+padding:14px 18px;
+font-size:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.add-shortlist.active{
 background:var(--gold);
 border-color:var(--gold);
 color:#050505;
 }
 
-.close{
-position:absolute;
-right:20px;
-top:18px;
-z-index:5;
-border:0;
-background:transparent;
-color:#fff;
-font-size:28px;
-cursor:pointer;
-}
 
-
-/* SHORTLIST */
-
-.shortlist-bar{
-position:fixed;
-right:24px;
-bottom:24px;
-z-index:15000;
-background:#fff;
-color:#050505;
-border-radius:40px;
-padding:14px 20px;
-font-size:12px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 10px 40px rgba(0,0,0,.4);
-}
+/* =========================
+   SHORTLIST PANEL
+========================= */
 
 .shortlist-panel{
 position:fixed;
 right:0;
 top:0;
-height:100vh;
+bottom:0;
 width:min(430px,100%);
-background:#0b0b0b;
-z-index:25000;
+background:#090909;
+z-index:40000;
 padding:35px;
 transform:translateX(100%);
 transition:.35s;
+border-left:1px solid #292929;
 overflow:auto;
-border-left:1px solid #333;
 }
 
 .shortlist-panel.open{
 transform:translateX(0);
 }
 
-.shortlist-panel h2{
-font-size:38px;
-margin-bottom:25px;
-}
-
-.shortlist-panel p{
-color:#777;
-font-size:13px;
-margin-bottom:20px;
-}
-
-.shortlist-entry{
-border-bottom:1px solid #292929;
-padding:18px 0;
-display:flex;
-justify-content:space-between;
-gap:20px;
-}
-
-.shortlist-entry span{
-color:#777;
-font-size:11px;
-display:block;
-margin-top:5px;
-}
-
-.remove{
-background:transparent;
-border:0;
-color:#777;
-cursor:pointer;
-}
-
-.panel-close{
+.shortlist-close{
+float:right;
 background:transparent;
 border:0;
 color:#fff;
-font-size:22px;
-float:right;
+font-size:25px;
 cursor:pointer;
 }
 
-.whatsapp-shortlist{
+.shortlist-panel h2{
+font-size:45px;
+letter-spacing:-2px;
+margin-bottom:7px;
+}
+
+.shortlist-panel > p{
+color:#777;
+font-size:12px;
+margin-bottom:28px;
+}
+
+.shortlisted-person{
+display:flex;
+justify-content:space-between;
+gap:15px;
+padding:18px 0;
+border-bottom:1px solid #252525;
+}
+
+.shortlisted-person strong{
+font-size:14px;
+}
+
+.shortlisted-person small{
 display:block;
-margin-top:12px;
+color:#777;
+margin-top:5px;
+font-size:9px;
+letter-spacing:1px;
+}
+
+.remove-person{
+border:0;
+background:transparent;
+color:#777;
+font-size:10px;
+cursor:pointer;
+}
+
+.shortlist-whatsapp{
+display:block;
+margin-top:11px;
+padding:15px;
+border-radius:30px;
 text-align:center;
 text-decoration:none;
-background:#25D366;
+background:var(--green);
 color:#050505;
-padding:16px;
-border-radius:30px;
-font-weight:bold;
-font-size:12px;
-}
-
-
-/* DISCLAIMER */
-
-.disclaimer{
-padding:40px 5%;
-border-top:1px solid #222;
-color:#666;
 font-size:11px;
-line-height:1.7;
+font-weight:bold;
 }
 
 
-/* MOBILE */
+/* =========================
+   REVEAL
+========================= */
 
-@media(max-width:1000px){
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible{
+opacity:1;
+transform:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
 
 .talent-grid{
 grid-template-columns:repeat(2,1fr);
+}
+
+.arena-wrap{
+grid-template-columns:1fr;
+}
+
+.sport-list{
+padding-right:0;
+}
+
+.arena-image{
+height:600px;
+}
+
+.hero-bottom{
+display:block;
+}
+
+.hero-actions{
+margin-top:30px;
 }
 
 .modal-box{
@@ -622,8 +995,8 @@ grid-template-columns:1fr;
 overflow:auto;
 }
 
-.modal-photo{
-height:340px;
+.modal-image{
+height:380px;
 }
 
 .modal-content{
@@ -633,30 +1006,62 @@ padding:35px;
 }
 
 
-@media(max-width:650px){
+@media(max-width:680px){
 
-nav ul{
+nav{
+height:68px;
+}
+
+.nav-links a:not(.nav-contact){
 display:none;
 }
 
+.logo{
+font-size:17px;
+}
+
 .hero{
-padding:130px 5% 70px;
+padding:120px 5% 55px;
 }
 
 .hero h1{
 letter-spacing:-4px;
+font-size:clamp(60px,18vw,95px);
 }
 
-.hero p{
-font-size:16px;
+.hero-bottom p{
+font-size:15px;
 }
 
-.talent-header{
+.intro,
+.arena,
+.icons,
+.services{
+padding-left:5%;
+padding-right:5%;
+}
+
+.intro-copy{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.arena-header,
+.icons-header{
 display:block;
 }
 
-.talent-header p{
+.arena-header p,
+.icons-header p{
 margin-top:20px;
+}
+
+.arena-image{
+height:430px;
+}
+
+.sport-item span:first-child{
+font-size:38px;
 }
 
 .talent-grid{
@@ -664,29 +1069,41 @@ grid-template-columns:1fr;
 }
 
 .talent-card{
-height:500px;
+height:510px;
 }
 
-.talent-info .view{
+.talent-view{
 opacity:1;
 transform:none;
 }
 
-.intro,
-.talents,
-.services{
-padding-left:5%;
-padding-right:5%;
-}
-
+.statement h2,
 .contact h2{
 letter-spacing:-4px;
 }
 
+.modal{
+padding:0;
+}
+
+.modal-box{
+height:100vh;
+border:0;
+}
+
 .modal-actions .btn,
-.modal-actions .shortlist-btn{
+.add-shortlist{
 width:100%;
 text-align:center;
+}
+
+.service{
+grid-template-columns:45px 1fr 25px;
+}
+
+footer{
+display:block;
+line-height:2;
 }
 
 }
@@ -694,9 +1111,14 @@ text-align:center;
 </style>
 </head>
 
-
 <body>
 
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- =========================
+NAV
+========================= -->
 
 <nav>
 
@@ -704,82 +1126,260 @@ text-align:center;
 ENORMOUS <span>VENTURE</span>
 </div>
 
-<ul>
-<li><a href="#talents">Icons</a></li>
-<li><a href="#services">Collaborations</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div class="nav-links">
+<a href="#arena">Sports</a>
+<a href="#icons">Icons</a>
+<a href="#services">Collaborations</a>
+<a href="#contact" class="nav-contact">Let's Talk</a>
+</div>
 
 </nav>
 
 
+<!-- =========================
+HERO
+========================= -->
+
 <section class="hero">
+
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
 
 <div class="hero-content">
 
-<div class="kicker">
+<div class="hero-topline">
 GLOBAL SPORTS COLLABORATIONS
 </div>
 
 <h1>
-ACCESS<br>
-<span>THE ICONS.</span>
+THE WORLD'S
+<span class="outline">ICONS.</span>
+<br>
+<span class="gold">YOUR NEXT</span>
+<br>
+COLLABORATION.
 </h1>
 
+<div class="hero-bottom">
+
 <p>
-Connecting global brands, events and experiences with some of the most recognisable names across world sport.
+Connecting brands, events and experiences with iconic names across football, basketball, boxing, snooker, motorsport and world sport.
 </p>
 
-<a class="btn" href="#talents">
+<div class="hero-actions">
+
+<a href="#icons" class="btn gold">
 EXPLORE ICONS →
+</a>
+
+<a href="#contact" class="btn dark">
+WORK WITH US
 </a>
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
 
-<section class="intro">
+<!-- =========================
+TICKER
+========================= -->
 
-<div class="section-label">
+<div class="ticker">
+
+<div class="ticker-track">
+
+<span>FOOTBALL</span><b>●</b>
+<span>BASKETBALL</span><b>●</b>
+<span>BOXING</span><b>●</b>
+<span>SNOOKER</span><b>●</b>
+<span>MOTORSPORT</span><b>●</b>
+<span>GLOBAL ICONS</span><b>●</b>
+
+<span>FOOTBALL</span><b>●</b>
+<span>BASKETBALL</span><b>●</b>
+<span>BOXING</span><b>●</b>
+<span>SNOOKER</span><b>●</b>
+<span>MOTORSPORT</span><b>●</b>
+<span>GLOBAL ICONS</span><b>●</b>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+INTRO
+========================= -->
+
+<section class="intro reveal">
+
+<div class="section-num">
 01 / ENORMOUS VENTURE
 </div>
 
 <h2>
-Big names create attention.
-<span>Great collaborations create legacy.</span>
+BIG NAMES CREATE ATTENTION.
+<span>GREAT COLLABORATIONS CREATE LEGACY.</span>
 </h2>
+
+<div class="intro-copy">
+
+<p>
+Enormous Venture connects brands and clients with potential opportunities involving globally recognised sports personalities.
+</p>
+
+<p>
+From appearances and corporate engagements to campaigns, endorsements and branded experiences, every collaboration begins with the right idea.
+</p>
+
+</div>
 
 </section>
 
 
-<section class="talents" id="talents">
+<!-- =========================
+ARENA
+========================= -->
 
-<div class="section-label">
-02 / GLOBAL SPORTS ICONS
+<section class="arena" id="arena">
+
+<div class="arena-header reveal">
+
+<div>
+
+<div class="section-num">
+02 / THE ARENA
 </div>
 
-<div class="talent-header">
+<h2>
+CHOOSE<br>YOUR SPORT.
+</h2>
+
+</div>
+
+<p>
+Explore potential collaboration opportunities across the world's most influential sporting categories.
+</p>
+
+</div>
+
+
+<div class="arena-wrap reveal">
+
+<div class="sport-list">
+
+<div class="sport-item active"
+data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85"
+data-caption="FOOTBALL / GLOBAL ICONS">
+
+<span>Football</span>
+<small>01</small>
+
+</div>
+
+
+<div class="sport-item"
+data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1400&q=85"
+data-caption="BASKETBALL / GLOBAL ICONS">
+
+<span>Basketball</span>
+<small>02</small>
+
+</div>
+
+
+<div class="sport-item"
+data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1400&q=85"
+data-caption="BOXING / GLOBAL ICONS">
+
+<span>Boxing</span>
+<small>03</small>
+
+</div>
+
+
+<div class="sport-item"
+data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=1400&q=85"
+data-caption="SNOOKER / GLOBAL ICONS">
+
+<span>Snooker</span>
+<small>04</small>
+
+</div>
+
+
+<div class="sport-item"
+data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=85"
+data-caption="MOTORSPORT / GLOBAL ICONS">
+
+<span>Motorsport</span>
+<small>05</small>
+
+</div>
+
+</div>
+
+
+<div class="arena-image">
+
+<img
+id="arenaImage"
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85"
+alt="Sports visual">
+
+<div class="arena-overlay"></div>
+
+<div class="arena-caption" id="arenaCaption">
+FOOTBALL / GLOBAL ICONS
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+ICONS
+========================= -->
+
+<section class="icons" id="icons">
+
+<div class="icons-header reveal">
+
+<div>
+
+<div class="section-num">
+03 / GLOBAL SPORTS ICONS
+</div>
 
 <h2>
 EXPLORE<br>THE ICONS.
 </h2>
 
+</div>
+
 <p>
-Discover potential collaboration opportunities across football, basketball, boxing, snooker and global sport.
+Explore potential collaboration opportunities with recognisable names across world sport.
 </p>
 
 </div>
 
 
-<div class="filters">
+<div class="filters reveal">
 
-<button class="filter-btn active" data-filter="all">ALL</button>
-<button class="filter-btn" data-filter="football">FOOTBALL</button>
-<button class="filter-btn" data-filter="basketball">BASKETBALL</button>
-<button class="filter-btn" data-filter="boxing">BOXING</button>
-<button class="filter-btn" data-filter="snooker">SNOOKER</button>
-<button class="filter-btn" data-filter="motorsport">MOTORSPORT</button>
+<button class="filter active" data-filter="all">ALL</button>
+<button class="filter" data-filter="football">FOOTBALL</button>
+<button class="filter" data-filter="basketball">BASKETBALL</button>
+<button class="filter" data-filter="boxing">BOXING</button>
+<button class="filter" data-filter="snooker">SNOOKER</button>
+<button class="filter" data-filter="motorsport">MOTORSPORT</button>
 
 </div>
 
@@ -789,59 +1389,114 @@ Discover potential collaboration opportunities across football, basketball, boxi
 </section>
 
 
-<section class="services" id="services">
+<!-- =========================
+STATEMENT
+========================= -->
 
-<div class="section-label">
-03 / COLLABORATION POSSIBILITIES
-</div>
+<section class="statement reveal">
 
 <h2>
-ONE ICON.
-<span>ENDLESS POSSIBILITIES.</span>
+THE RIGHT NAME.
+<span>THE RIGHT MOMENT.</span>
+THE RIGHT IMPACT.
 </h2>
 
-<div class="tags">
+</section>
 
-<span>Brand Endorsements</span>
-<span>Campaigns</span>
-<span>Meet & Greets</span>
-<span>Corporate Events</span>
-<span>Product Launches</span>
-<span>Speaking Engagements</span>
-<span>Private Appearances</span>
-<span>Social Content</span>
-<span>Brand Activations</span>
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+<div class="section-num">
+04 / COLLABORATIONS
+</div>
+
+<h2 class="reveal">
+ONE ICON.<br>
+ENDLESS POSSIBILITIES.
+</h2>
+
+
+<div class="service-list">
+
+<div class="service reveal">
+<div class="service-num">01</div>
+<div class="service-name">Brand Campaigns</div>
+<div class="service-arrow">↗</div>
+</div>
+
+<div class="service reveal">
+<div class="service-num">02</div>
+<div class="service-name">Event Appearances</div>
+<div class="service-arrow">↗</div>
+</div>
+
+<div class="service reveal">
+<div class="service-num">03</div>
+<div class="service-name">Endorsements</div>
+<div class="service-arrow">↗</div>
+</div>
+
+<div class="service reveal">
+<div class="service-num">04</div>
+<div class="service-name">Meet & Greets</div>
+<div class="service-arrow">↗</div>
+</div>
+
+<div class="service reveal">
+<div class="service-num">05</div>
+<div class="service-name">Corporate Engagements</div>
+<div class="service-arrow">↗</div>
+</div>
+
+<div class="service reveal">
+<div class="service-num">06</div>
+<div class="service-name">Branded Content</div>
+<div class="service-arrow">↗</div>
+</div>
 
 </div>
 
 </section>
 
 
+<!-- =========================
+CONTACT
+========================= -->
+
 <section class="contact" id="contact">
 
-<div>
+<div class="reveal">
+
+<div class="section-num">
+05 / START A CONVERSATION
+</div>
 
 <h2>
 YOUR BRAND.<br>
-THEIR LEGACY.
+<span>THEIR LEGACY.</span>
 </h2>
 
 <p>
-Tell us who you want to collaborate with.
+Tell us the personality, sport or collaboration you have in mind and start the conversation with our team.
 </p>
+
 
 <div class="contact-buttons">
 
 <a
-class="btn"
-href="https://wa.me/60123663439?text=Hi%20Jiewei%2C%20I%20would%20like%20to%20enquire%20about%20a%20sports%20collaboration."
+class="btn gold"
+href="https://wa.me/60123663439?text=Hi%20Jiewei%2C%20I%20would%20like%20to%20discuss%20a%20sports%20collaboration."
 target="_blank">
 WHATSAPP JIEWEI →
 </a>
 
 <a
-class="btn"
-href="https://wa.me/60199363751?text=Hi%20Jasper%2C%20I%20would%20like%20to%20enquire%20about%20a%20sports%20collaboration."
+class="btn dark"
+href="https://wa.me/60199363751?text=Hi%20Jasper%2C%20I%20would%20like%20to%20discuss%20a%20sports%20collaboration."
 target="_blank">
 WHATSAPP JASPER →
 </a>
@@ -853,24 +1508,55 @@ WHATSAPP JASPER →
 </section>
 
 
-<div class="disclaimer">
+<!-- =========================
+FOOTER
+========================= -->
 
-Enormous Venture presents names as potential collaboration opportunities for client consideration. Listing a public figure does not imply that Enormous Venture represents, manages, has signed, or has confirmed the availability of that individual. Availability, fees, usage rights and commercial terms must be separately confirmed before any agreement.
+<footer>
 
+<div>
+© 2026 ENORMOUS VENTURE
 </div>
 
+<div>
+GLOBAL SPORTS COLLABORATIONS
+</div>
 
-<!-- PROFILE MODAL -->
+<div>
+Names displayed represent potential collaboration opportunities and do not imply representation or confirmed availability.
+</div>
 
-<div class="modal" id="modal">
+</footer>
+
+
+<!-- =========================
+SHORTLIST FIXED BUTTON
+========================= -->
+
+<button class="shortlist-btn-fixed" id="shortlistOpen">
+SHORTLIST (<span id="shortlistCount">0</span>)
+</button>
+
+
+<!-- =========================
+PROFILE MODAL
+========================= -->
+
+<div class="modal" id="profileModal">
 
 <div class="modal-box">
 
-<button class="close" id="closeModal">×</button>
+<button class="modal-close" id="modalClose">
+×
+</button>
 
-<div class="modal-photo">
+
+<div class="modal-image">
+
 <img id="modalImage" alt="">
+
 </div>
+
 
 <div class="modal-content">
 
@@ -878,34 +1564,30 @@ Enormous Venture presents names as potential collaboration opportunities for cli
 
 <h2 id="modalName"></h2>
 
-<p id="modalDescription"></p>
+<p id="modalText"></p>
 
-<div class="profile-tags">
+
+<div class="modal-tags">
 
 <span>BRAND CAMPAIGNS</span>
-<span>EVENT APPEARANCES</span>
-<span>CONTENT</span>
+<span>EVENTS</span>
 <span>ENDORSEMENTS</span>
+<span>CONTENT</span>
 
 </div>
 
+
 <div class="modal-actions">
 
-<button class="shortlist-btn" id="modalShortlist">
+<button class="add-shortlist" id="addShortlist">
 ADD TO SHORTLIST
 </button>
 
-<a
-class="btn"
-id="modalWhatsappJiewei"
-target="_blank">
+<a class="btn gold" id="whatsappJiewei" target="_blank">
 JIEWEI →
 </a>
 
-<a
-class="btn"
-id="modalWhatsappJasper"
-target="_blank">
+<a class="btn dark" id="whatsappJasper" target="_blank">
 JASPER →
 </a>
 
@@ -918,37 +1600,37 @@ JASPER →
 </div>
 
 
-<!-- SHORTLIST BUTTON -->
-
-<div class="shortlist-bar" id="shortlistBar">
-SHORTLIST (<span id="shortlistCount">0</span>)
-</div>
-
-
-<!-- SHORTLIST PANEL -->
+<!-- =========================
+SHORTLIST PANEL
+========================= -->
 
 <div class="shortlist-panel" id="shortlistPanel">
 
-<button class="panel-close" id="closeShortlist">×</button>
+<button class="shortlist-close" id="shortlistClose">
+×
+</button>
 
-<h2>Your Shortlist</h2>
+<h2>
+Your Shortlist
+</h2>
 
 <p>
-Select who you would like to contact.
+Select the sports personalities you would like to discuss.
 </p>
 
 <div id="shortlistItems"></div>
 
+
 <a
-id="shortlistWhatsappJiewei"
-class="whatsapp-shortlist"
+class="shortlist-whatsapp"
+id="shortlistJiewei"
 target="_blank">
 WHATSAPP JIEWEI
 </a>
 
 <a
-id="shortlistWhatsappJasper"
-class="whatsapp-shortlist"
+class="shortlist-whatsapp"
+id="shortlistJasper"
 target="_blank">
 WHATSAPP JASPER
 </a>
@@ -958,10 +1640,13 @@ WHATSAPP JASPER
 
 <script>
 
-/*
-TEMPORARY SPORT / EDITORIAL IMAGERY.
-Replace with approved/licensed athlete photography later.
-*/
+/* =========================
+TEMPORARY SPORTS IMAGERY
+
+Replace these images with approved/licensed
+athlete photography when available.
+========================= */
+
 
 const talents = [
 
@@ -994,7 +1679,7 @@ name:"Ronaldinho",
 sport:"football",
 country:"Brazil",
 label:"Football Legend",
-image:"https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1018,7 +1703,7 @@ name:"Jude Bellingham",
 sport:"football",
 country:"England",
 label:"Global Football Star",
-image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1486286701208-1d58e9338013?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1026,7 +1711,7 @@ name:"Lamine Yamal",
 sport:"football",
 country:"Spain",
 label:"Football Star",
-image:"https://images.unsplash.com/photo-1486286701208-1d58e9338013?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1034,7 +1719,7 @@ name:"Neymar Jr.",
 sport:"football",
 country:"Brazil",
 label:"Global Football Icon",
-image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1042,7 +1727,7 @@ name:"Zlatan Ibrahimović",
 sport:"football",
 country:"Sweden",
 label:"Football Legend",
-image:"https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1050,7 +1735,7 @@ name:"Thierry Henry",
 sport:"football",
 country:"France",
 label:"Football Legend",
-image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1082,7 +1767,7 @@ name:"Stephen Curry",
 sport:"basketball",
 country:"USA",
 label:"Basketball Icon",
-image:"https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1106,7 +1791,7 @@ name:"Floyd Mayweather Jr.",
 sport:"boxing",
 country:"USA",
 label:"Boxing Icon",
-image:"https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1114,7 +1799,7 @@ name:"Anthony Joshua",
 sport:"boxing",
 country:"United Kingdom",
 label:"Boxing Star",
-image:"https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?auto=format&fit=crop&w=900&q=85"
+image:"https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=900&q=85"
 },
 
 {
@@ -1152,40 +1837,86 @@ image:"https://images.unsplash.com/photo-1541773367336-d3f7e54f1b8c?auto=format&
 ];
 
 
-const grid = document.getElementById("talentGrid");
+/* =========================
+ARENA INTERACTION
+========================= */
 
-const shortlist = [];
+const sportItems =
+document.querySelectorAll(".sport-item");
 
-let currentTalent = null;
+const arenaImage =
+document.getElementById("arenaImage");
+
+const arenaCaption =
+document.getElementById("arenaCaption");
+
+sportItems.forEach(item=>{
+
+item.addEventListener("mouseenter",()=>{
+
+sportItems.forEach(x=>
+x.classList.remove("active")
+);
+
+item.classList.add("active");
+
+arenaImage.style.opacity="0";
+
+setTimeout(()=>{
+
+arenaImage.src=item.dataset.image;
+arenaCaption.textContent=item.dataset.caption;
+
+arenaImage.style.opacity="1";
+
+},180);
+
+});
+
+});
 
 
-/* RENDER TALENTS */
+/* =========================
+TALENT GRID
+========================= */
+
+const talentGrid =
+document.getElementById("talentGrid");
 
 function renderTalents(filter="all"){
 
-grid.innerHTML="";
+talentGrid.innerHTML="";
 
 talents
-.filter(t => filter==="all" || t.sport===filter)
+.filter(t =>
+filter==="all" || t.sport===filter
+)
 .forEach(t=>{
 
-const card=document.createElement("div");
+const card =
+document.createElement("div");
 
-card.className="talent-card";
+card.className="talent-card reveal";
 
 card.innerHTML=`
 
-<img src="${t.image}" alt="${t.name} temporary sport visual">
+<img
+src="${t.image}"
+alt="${t.name} temporary sports visual">
 
 <div class="talent-info">
 
 <small>
-${t.sport.toUpperCase()} / ${t.country.toUpperCase()}
+${t.sport.toUpperCase()}
+/
+${t.country.toUpperCase()}
 </small>
 
-<h3>${t.name.toUpperCase()}</h3>
+<h3>
+${t.name.toUpperCase()}
+</h3>
 
-<div class="view">
+<div class="talent-view">
 VIEW PROFILE →
 </div>
 
@@ -1193,53 +1924,79 @@ VIEW PROFILE →
 
 `;
 
-card.addEventListener("click",()=>openTalent(t));
+card.addEventListener("click",()=>{
+openProfile(t);
+});
 
-grid.appendChild(card);
+talentGrid.appendChild(card);
 
 });
+
+observeReveals();
 
 }
 
 renderTalents();
 
 
-/* FILTERS */
+/* =========================
+FILTERS
+========================= */
 
-document.querySelectorAll(".filter-btn").forEach(btn=>{
+document
+.querySelectorAll(".filter")
+.forEach(button=>{
 
-btn.addEventListener("click",()=>{
+button.addEventListener("click",()=>{
 
-document.querySelectorAll(".filter-btn")
-.forEach(b=>b.classList.remove("active"));
+document
+.querySelectorAll(".filter")
+.forEach(x=>
+x.classList.remove("active")
+);
 
-btn.classList.add("active");
+button.classList.add("active");
 
-renderTalents(btn.dataset.filter);
+renderTalents(
+button.dataset.filter
+);
 
 });
 
 });
 
 
-/* MODAL */
+/* =========================
+PROFILE MODAL
+========================= */
 
-const modal=document.getElementById("modal");
+const modal =
+document.getElementById("profileModal");
 
-const modalImage=document.getElementById("modalImage");
-const modalName=document.getElementById("modalName");
-const modalSport=document.getElementById("modalSport");
-const modalDescription=document.getElementById("modalDescription");
-const modalShortlist=document.getElementById("modalShortlist");
+const modalImage =
+document.getElementById("modalImage");
 
-const modalWhatsappJiewei=
-document.getElementById("modalWhatsappJiewei");
+const modalName =
+document.getElementById("modalName");
 
-const modalWhatsappJasper=
-document.getElementById("modalWhatsappJasper");
+const modalSport =
+document.getElementById("modalSport");
 
+const modalText =
+document.getElementById("modalText");
 
-function openTalent(t){
+const addShortlist =
+document.getElementById("addShortlist");
+
+const whatsappJiewei =
+document.getElementById("whatsappJiewei");
+
+const whatsappJasper =
+document.getElementById("whatsappJasper");
+
+let currentTalent=null;
+
+function openProfile(t){
 
 currentTalent=t;
 
@@ -1250,71 +2007,95 @@ modalName.textContent=t.name;
 modalSport.textContent=
 `${t.sport.toUpperCase()} / ${t.country.toUpperCase()}`;
 
-modalDescription.textContent=
-`${t.label}. Explore potential brand campaigns, appearances, endorsements, events and other collaboration opportunities subject to availability and commercial terms.`;
+modalText.textContent=
+`${t.label}. Explore potential opportunities involving brand campaigns, event appearances, endorsements, content and corporate engagements, subject to availability and commercial terms.`;
 
 const message =
-"I would like to enquire about a potential collaboration with " +
-t.name + ".";
+`Hi, I would like to enquire about a potential collaboration with ${t.name}.`;
 
-modalWhatsappJiewei.href=
+whatsappJiewei.href=
 `https://wa.me/60123663439?text=${encodeURIComponent(
 "Hi Jiewei, " + message
 )}`;
 
-modalWhatsappJasper.href=
+whatsappJasper.href=
 `https://wa.me/60199363751?text=${encodeURIComponent(
 "Hi Jasper, " + message
 )}`;
 
 modal.classList.add("open");
 
-updateModalButton();
+document.body.classList.add("modal-open");
+
+updateShortlistButton();
 
 }
 
 
-document.getElementById("closeModal")
-.addEventListener("click",()=>modal.classList.remove("open"));
+function closeProfile(){
+
+modal.classList.remove("open");
+
+document.body.classList.remove("modal-open");
+
+}
+
+
+document
+.getElementById("modalClose")
+.addEventListener("click",closeProfile);
 
 
 modal.addEventListener("click",e=>{
 
 if(e.target===modal){
-modal.classList.remove("open");
+closeProfile();
 }
 
 });
 
 
-/* SHORTLIST */
+/* =========================
+SHORTLIST
+========================= */
 
-function talentInShortlist(t){
+const shortlist=[];
 
-return shortlist.some(x=>x.name===t.name);
+function isShortlisted(t){
 
-}
-
-
-function updateModalButton(){
-
-if(!currentTalent)return;
-
-const active=talentInShortlist(currentTalent);
-
-modalShortlist.classList.toggle("active",active);
-
-modalShortlist.textContent=
-active ? "SHORTLISTED ✓" : "ADD TO SHORTLIST";
+return shortlist.some(x=>
+x.name===t.name
+);
 
 }
 
 
-modalShortlist.addEventListener("click",()=>{
+function updateShortlistButton(){
 
 if(!currentTalent)return;
 
-const index=shortlist.findIndex(
+const active =
+isShortlisted(currentTalent);
+
+addShortlist.classList.toggle(
+"active",
+active
+);
+
+addShortlist.textContent=
+active
+? "SHORTLISTED ✓"
+: "ADD TO SHORTLIST";
+
+}
+
+
+addShortlist.addEventListener("click",()=>{
+
+if(!currentTalent)return;
+
+const index=
+shortlist.findIndex(
 x=>x.name===currentTalent.name
 );
 
@@ -1328,57 +2109,70 @@ shortlist.push(currentTalent);
 
 }
 
-updateShortlist();
-updateModalButton();
+updateShortlistUI();
+
+updateShortlistButton();
 
 });
 
 
-const shortlistCount=
+const shortlistCount =
 document.getElementById("shortlistCount");
 
-const shortlistItems=
+const shortlistItems =
 document.getElementById("shortlistItems");
 
-const shortlistWhatsappJiewei=
-document.getElementById("shortlistWhatsappJiewei");
+const shortlistJiewei =
+document.getElementById("shortlistJiewei");
 
-const shortlistWhatsappJasper=
-document.getElementById("shortlistWhatsappJasper");
+const shortlistJasper =
+document.getElementById("shortlistJasper");
 
 
-function updateShortlist(){
+function updateShortlistUI(){
 
-shortlistCount.textContent=shortlist.length;
+shortlistCount.textContent=
+shortlist.length;
 
 shortlistItems.innerHTML="";
 
 shortlist.forEach((t,index)=>{
 
-const row=document.createElement("div");
+const row =
+document.createElement("div");
 
-row.className="shortlist-entry";
+row.className=
+"shortlisted-person";
 
 row.innerHTML=`
 
 <div>
-<strong>${t.name}</strong>
-<span>${t.sport.toUpperCase()} / ${t.country}</span>
+
+<strong>
+${t.name}
+</strong>
+
+<small>
+${t.sport.toUpperCase()} / ${t.country}
+</small>
+
 </div>
 
-<button class="remove">
+<button class="remove-person">
 REMOVE
 </button>
 
 `;
 
-row.querySelector(".remove")
+row
+.querySelector(".remove-person")
 .addEventListener("click",()=>{
 
 shortlist.splice(index,1);
 
-updateShortlist();
-updateModalButton();
+updateShortlistUI();
+
+updateShortlistButton();
 
 });
 
@@ -1387,56 +2181,144 @@ shortlistItems.appendChild(row);
 });
 
 
-const names=
-shortlist.map(x=>x.name).join(", ");
+const names =
+shortlist.length
+? shortlist.map(x=>x.name).join(", ")
+: "I would like to discuss available sports collaboration opportunities.";
 
-const shortlistMessage =
-"I would like to enquire about the following sports personalities: " +
-(names || "Please share available sports collaboration opportunities.");
 
-shortlistWhatsappJiewei.href=
+const message =
+shortlist.length
+? `I would like to enquire about the following sports personalities: ${names}.`
+: names;
+
+
+shortlistJiewei.href=
 `https://wa.me/60123663439?text=${encodeURIComponent(
-"Hi Jiewei, " + shortlistMessage
+"Hi Jiewei, " + message
 )}`;
 
-shortlistWhatsappJasper.href=
+shortlistJasper.href=
 `https://wa.me/60199363751?text=${encodeURIComponent(
-"Hi Jasper, " + shortlistMessage
+"Hi Jasper, " + message
 )}`;
 
 }
 
+updateShortlistUI();
 
-updateShortlist();
 
+/* =========================
+SHORTLIST PANEL
+========================= */
 
-/* SHORTLIST PANEL */
-
-const panel=
+const shortlistPanel =
 document.getElementById("shortlistPanel");
 
-document.getElementById("shortlistBar")
-.addEventListener("click",()=>panel.classList.add("open"));
+document
+.getElementById("shortlistOpen")
+.addEventListener("click",()=>{
 
-document.getElementById("closeShortlist")
-.addEventListener("click",()=>panel.classList.remove("open"));
+shortlistPanel.classList.add("open");
+
+});
 
 
-/* ESC CLOSE */
+document
+.getElementById("shortlistClose")
+.addEventListener("click",()=>{
 
-document.addEventListener("keydown",e=>{
+shortlistPanel.classList.remove("open");
 
-if(e.key==="Escape"){
+});
 
-modal.classList.remove("open");
-panel.classList.remove("open");
+
+/* =========================
+SCROLL REVEAL
+========================= */
+
+function observeReveals(){
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add(
+"visible"
+);
+
+observer.unobserve(
+entry.target
+);
 
 }
 
 });
 
-</script>
+},
+{
+threshold:.12
+}
+);
 
+
+document
+.querySelectorAll(".reveal:not(.visible)")
+.forEach(el=>
+observer.observe(el)
+);
+
+}
+
+observeReveals();
+
+
+/* =========================
+CURSOR GLOW
+========================= */
+
+const cursorGlow =
+document.getElementById("cursorGlow");
+
+document.addEventListener(
+"mousemove",
+e=>{
+
+cursorGlow.style.left=
+e.clientX+"px";
+
+cursorGlow.style.top=
+e.clientY+"px";
+
+}
+);
+
+
+/* =========================
+ESC CLOSE
+========================= */
+
+document.addEventListener(
+"keydown",
+e=>{
+
+if(e.key==="Escape"){
+
+closeProfile();
+
+shortlistPanel
+.classList.remove("open");
+
+}
+
+}
+);
+
+</script>
 
 </body>
 </html>
