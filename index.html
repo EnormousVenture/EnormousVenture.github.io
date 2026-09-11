@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Enormous Venture | Global Sports Collaborations</title>
+<title>Enormous Venture | Global Sports Icons</title>
 
 <style>
 
@@ -25,862 +25,675 @@ color:#fff;
 overflow-x:hidden;
 }
 
-a{
-color:inherit;
+button,a{
+font-family:inherit;
+}
+
+:root{
+--gold:#e4bd23;
+--black:#050505;
+--grey:#8b8b8b;
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
 nav{
 position:fixed;
 top:0;
 left:0;
-width:100%;
+right:0;
 height:76px;
-padding:0 5.5%;
+padding:0 5%;
 display:flex;
-align-items:center;
 justify-content:space-between;
-z-index:1000;
-background:linear-gradient(to bottom,rgba(0,0,0,.9),transparent);
+align-items:center;
+background:rgba(5,5,5,.94);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.07);
+z-index:9999;
 }
 
 .logo{
-font-size:21px;
 font-weight:900;
+font-size:21px;
 letter-spacing:1px;
 }
 
 .logo span{
-color:#e2bb21;
+color:var(--gold);
 }
 
 nav ul{
 display:flex;
-gap:34px;
 list-style:none;
+gap:30px;
 }
 
 nav a{
+color:#fff;
 text-decoration:none;
-font-size:14px;
-transition:.3s;
+font-size:13px;
 }
 
 nav a:hover{
-color:#e2bb21;
+color:var(--gold);
 }
 
 
 /* HERO */
 
 .hero{
-height:100vh;
-min-height:700px;
-position:relative;
+min-height:100vh;
+padding:150px 5% 80px;
 display:flex;
-align-items:center;
-padding:0 5.5%;
+align-items:flex-end;
+position:relative;
 overflow:hidden;
-
 background:
-linear-gradient(
-90deg,
-rgba(0,0,0,.94) 0%,
-rgba(0,0,0,.72) 44%,
-rgba(0,0,0,.18) 100%
-),
-url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2000&q=90')
-center/cover no-repeat;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:180px;
-background:linear-gradient(transparent,#050505);
+linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.56),rgba(0,0,0,.12)),
+url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=90')
+center/cover;
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:1000px;
-animation:heroIn 1.1s ease;
+max-width:1100px;
 }
 
-.eyebrow{
-font-size:12px;
-letter-spacing:6px;
+.kicker{
+font-size:11px;
+letter-spacing:5px;
+color:var(--gold);
 font-weight:bold;
-color:#e2bb21;
-margin-bottom:28px;
+margin-bottom:25px;
 }
 
 .hero h1{
-font-size:clamp(58px,7vw,105px);
-line-height:.93;
-letter-spacing:-4px;
+font-size:clamp(65px,9vw,145px);
+line-height:.82;
+letter-spacing:-7px;
 font-weight:900;
-margin-bottom:30px;
 }
 
 .hero h1 span{
-color:#e2bb21;
+color:var(--gold);
 }
 
-.hero-description{
+.hero p{
 font-size:20px;
 line-height:1.6;
-max-width:650px;
 color:#ccc;
-margin-bottom:38px;
+max-width:670px;
+margin:35px 0;
 }
 
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.button{
+.btn{
 display:inline-block;
-padding:16px 30px;
-background:#e2bb21;
-color:#050505;
+padding:16px 28px;
 border-radius:50px;
-text-decoration:none;
-font-size:13px;
+background:var(--gold);
+color:#050505;
+font-size:12px;
 font-weight:bold;
 letter-spacing:1px;
-transition:.3s;
+text-decoration:none;
+border:0;
+cursor:pointer;
+transition:.25s;
 }
 
-.button:hover{
-background:white;
-transform:translateY(-4px);
-}
-
-.button-outline{
-background:transparent;
-border:1px solid rgba(255,255,255,.6);
-color:white;
-}
-
-.button-outline:hover{
-background:white;
-color:#050505;
+.btn:hover{
+background:#fff;
+transform:translateY(-3px);
 }
 
 
 /* INTRO */
 
 .intro{
-padding:150px 7%;
-max-width:1500px;
-margin:auto;
+padding:140px 5%;
 }
 
-.section-number{
-font-size:11px;
-letter-spacing:3px;
-color:#e2bb21;
+.section-label{
+font-size:10px;
+letter-spacing:4px;
+color:var(--gold);
 margin-bottom:25px;
 }
 
-.big-copy{
-font-size:clamp(40px,5vw,75px);
-line-height:1.05;
-letter-spacing:-2px;
-font-weight:800;
+.intro h2{
+font-size:clamp(46px,6vw,90px);
+line-height:1;
+letter-spacing:-4px;
 max-width:1200px;
 }
 
-.big-copy span{
+.intro h2 span{
 color:#555;
 }
 
 
-/* ARENA */
+/* TALENTS */
 
-.arena{
-padding:90px 5.5% 150px; scroll-margin-top;90px;
+.talents{
+padding:110px 5% 150px;
+background:#080808;
+scroll-margin-top:75px;
 }
 
-.arena-header{
+.talent-header{
 display:flex;
 justify-content:space-between;
 align-items:flex-end;
-margin-bottom:45px;
+gap:30px;
+margin-bottom:50px;
 }
 
-.arena-header h2{
-font-size:clamp(50px,6vw,82px);
-letter-spacing:-4px;
+.talent-header h2{
+font-size:clamp(50px,7vw,95px);
+line-height:.9;
+letter-spacing:-5px;
 }
 
-.arena-header span{
-font-size:10px;
-letter-spacing:3px;
+.talent-header p{
 color:#777;
-}
-
-.arena-layout{
-display:grid;
-grid-template-columns:1fr 42%;
-gap:55px;
-align-items:stretch;
-}
-
-.sport-list{
-border-top:1px solid #2d2d2d;
-}
-
-.sport-item{
-display:grid;
-grid-template-columns:50px 1fr 40px;
-align-items:center;
-min-height:92px;
-border-bottom:1px solid #2d2d2d;
-cursor:pointer;
-transition:.35s;
-}
-
-.sport-number{
-font-size:9px;
-letter-spacing:2px;
-color:#666;
-}
-
-.sport-item h3{
-font-size:clamp(34px,4vw,58px);
-font-weight:800;
-transition:.35s;
-}
-
-.sport-arrow{
-font-size:24px;
-text-align:right;
-transition:.35s;
-}
-
-.sport-item:hover h3,
-.sport-item.active h3{
-color:#e2bb21;
-transform:translateX(12px);
-}
-
-.sport-item:hover .sport-arrow,
-.sport-item.active .sport-arrow{
-color:#e2bb21;
-transform:translateX(8px);
-}
-
-.sport-list:hover .sport-item:not(:hover){
-opacity:.35;
-}
-
-
-/* ARENA IMAGE PANEL */
-
-.arena-image{
-position:relative;
-min-height:555px;
-overflow:hidden;
-background:#111;
-}
-
-.arena-image img{
-width:100%;
-height:100%;
-position:absolute;
-inset:0;
-object-fit:cover;
-transition:
-opacity .45s ease,
-transform .7s ease;
-}
-
-.arena-image:hover img{
-transform:scale(1.04);
-}
-
-.arena-image::after{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(to top,rgba(0,0,0,.65),transparent 55%);
-pointer-events:none;
-}
-
-.arena-label{
-position:absolute;
-left:28px;
-bottom:26px;
-z-index:2;
-}
-
-.arena-label small{
-display:block;
-color:#e2bb21;
-font-size:10px;
-letter-spacing:3px;
-margin-bottom:8px;
-}
-
-.arena-label h4{
-font-size:28px;
-}
-
-/* FEATURED ICONS */
-
-.icons{
-padding:190px 5.5% 140px;
-background:#050505; scroll-margin-top;90px;
-}
-
-.icons-heading{
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-margin-bottom:55px;
-}
-
-.icons-heading h2{
-font-size:clamp(48px,6vw,82px);
-font-weight:900;
-letter-spacing:-4px;
-line-height:.95;
-}
-
-.icons-heading p{
-margin-top:20px;
-max-width:600px;
-font-size:17px;
+max-width:420px;
 line-height:1.6;
-color:#888;
 }
 
-.icons-grid{
+
+/* FILTER */
+
+.filters{
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+
+.filter-btn{
+background:transparent;
+border:1px solid #353535;
+color:#bbb;
+border-radius:30px;
+padding:11px 18px;
+font-size:10px;
+letter-spacing:1px;
+cursor:pointer;
+transition:.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+background:var(--gold);
+border-color:var(--gold);
+color:#050505;
+}
+
+
+/* GRID */
+
+.talent-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:15px;
+gap:16px;
 }
 
-.icon-card{
+.talent-card{
+height:510px;
 position:relative;
-height:470px;
 overflow:hidden;
 background:#111;
 cursor:pointer;
 }
 
-.icon-visual{
+.talent-card img{
 position:absolute;
 inset:0;
-background-size:cover;
-background-position:center;
+width:100%;
+height:100%;
+object-fit:cover;
 filter:grayscale(100%);
-transform:scale(1.01);
-transition:
-transform .7s ease,
-filter .6s ease;
+transition:.65s ease;
 }
 
-/* INDIVIDUAL TEMPORARY VISUALS */
-
-.icon-card:nth-child(1) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(2) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85');}
-
-.icon-card:nth-child(3) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(4) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85');}
-
-.icon-card:nth-child(5) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(6) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(7) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(8) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(9) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(10) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(11) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(12) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(13) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(14) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card:nth-child(15) .icon-visual{
-background-image:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.08)),
-url('https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?auto=format&fit=crop&w=900&q=85');
-}
-
-.icon-card::after{
+.talent-card::after{
 content:"";
 position:absolute;
 inset:0;
 background:linear-gradient(
 to top,
-rgba(0,0,0,.95) 0%,
-rgba(0,0,0,.15) 60%,
-transparent 100%
+rgba(0,0,0,.96),
+rgba(0,0,0,.2) 65%,
+transparent
 );
-pointer-events:none;
 }
 
-.icon-card:hover .icon-visual{
-transform:scale(1.08);
-filter:grayscale(0%);
+.talent-card:hover img{
+transform:scale(1.07);
+filter:grayscale(20%);
 }
 
-.icon-info{
+.talent-info{
 position:absolute;
-left:25px;
-right:25px;
-bottom:25px;
+left:24px;
+right:24px;
+bottom:24px;
 z-index:2;
-transition:.4s;
+transition:.35s;
 }
 
-.icon-info small{
-display:block;
+.talent-info small{
+color:var(--gold);
 font-size:9px;
 letter-spacing:2px;
-color:#e2bb21;
-margin-bottom:10px;
 }
 
-.icon-info h3{
-font-size:26px;
-line-height:1;
+.talent-info h3{
+font-size:27px;
+line-height:.95;
+margin-top:10px;
 font-weight:900;
-margin-bottom:15px;
 }
 
-.icon-info a{
-display:inline-block;
-color:white;
+.talent-info .view{
+margin-top:15px;
 font-size:10px;
-font-weight:bold;
 letter-spacing:1.5px;
-text-decoration:none;
 opacity:0;
-transform:translateY(15px);
-transition:.4s;
-}
-
-.icon-card:hover .icon-info{
-transform:translateY(-10px);
-}
-
-.icon-card:hover .icon-info a{
-opacity:1;
-transform:translateY(0);
-}
-/* VIEW ALL ICONS */
-
-.icon-card:nth-child(n+9){
-display:none;
-}
-
-.icons-grid.show-all .icon-card{
-display:block;
-}
-
-.icons-more{
-display:flex;
-justify-content:center;
-margin-top:50px;
-}
-
-.icons-more button{
-background:transparent;
-color:#fff;
-border:1px solid #444;
-border-radius:50px;
-padding:17px 32px;
-font-size:11px;
-font-weight:bold;
-letter-spacing:2px;
-cursor:pointer;
+transform:translateY(10px);
 transition:.3s;
 }
 
-.icons-more button:hover{
-background:#e2bb21;
-border-color:#e2bb21;
-color:#050505;
-transform:translateY(-3px);
+.talent-card:hover .talent-info{
+transform:translateY(-8px);
 }
 
-/* FEATURED ICONS MOBILE */
-
-@media(max-width:1000px){
-
-.icons-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:600px){
-
-.icons{
-padding:100px 5%;
-}
-
-.icons-grid{
-grid-template-columns:1fr;
-}
-
-.icon-card{
-height:480px;
-}
-
-.icons-heading h2{
-font-size:48px;
-letter-spacing:-2px;
-}
-
-.icon-info a{
+.talent-card:hover .view{
 opacity:1;
 transform:none;
-}
-
-}
-  
-/* COLLABORATIONS */
-
-.collaborations{
-padding:130px 6%;
-background:#0b0b0b; scroll-margin-top:90px;
-}
-
-.collab-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:60px;
-}
-
-.collab-card{
-height:540px;
-position:relative;
-overflow:hidden;
-opacity:0;
-transform:translateY(45px);
-transition:.8s;
-}
-
-.collab-card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.collab-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:grayscale(100%);
-transition:.7s;
-}
-
-.collab-card:hover img{
-transform:scale(1.06);
-filter:grayscale(0%);
-}
-
-.collab-overlay{
-position:absolute;
-inset:0;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-padding:30px;
-background:linear-gradient(transparent 35%,rgba(0,0,0,.95));
-}
-
-.collab-overlay small{
-font-size:10px;
-letter-spacing:3px;
-color:#e2bb21;
-margin-bottom:10px;
-}
-
-.collab-overlay h3{
-font-size:28px;
 }
 
 
 /* SERVICES */
 
 .services{
-padding:150px 7%; scroll-margin-top:90px;
+padding:140px 5%;
 }
 
-.service-tags{
+.services h2{
+font-size:clamp(48px,6vw,90px);
+line-height:1;
+letter-spacing:-4px;
+max-width:900px;
+}
+
+.services h2 span{
+color:#555;
+}
+
+.tags{
 display:flex;
 flex-wrap:wrap;
-gap:12px;
+gap:10px;
 margin-top:50px;
 }
 
-.service-tags span{
+.tags span{
+padding:15px 21px;
 border:1px solid #333;
-border-radius:50px;
-padding:16px 22px;
-font-size:14px;
-transition:.3s;
-}
-
-.service-tags span:hover{
-background:#e2bb21;
-border-color:#e2bb21;
-color:#050505;
-transform:translateY(-3px);
+border-radius:30px;
+font-size:13px;
 }
 
 
 /* CONTACT */
 
 .contact{
-min-height:78vh;
+min-height:75vh;
+padding:120px 5%;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:100px 7%;
-background:#e2bb21;
-color:#050505; scroll-margin-top:90px;
+background:var(--gold);
+color:#050505;
+scroll-margin-top:75px;
 }
 
 .contact h2{
-font-size:clamp(58px,9vw,125px);
-line-height:.86;
-letter-spacing:-6px;
-margin-bottom:35px;
+font-size:clamp(60px,10vw,145px);
+line-height:.8;
+letter-spacing:-7px;
 }
 
 .contact p{
-font-size:19px;
-margin-bottom:35px;
+margin:35px 0 25px;
+font-size:18px;
 }
 
-.contact .button{
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.contact .btn{
 background:#050505;
 color:#fff;
 }
 
+.contact .btn:hover{
+background:#fff;
+color:#050505;
+}
 
-/* WHATSAPP */
 
-.whatsapp{
+/* MODAL */
+
+.modal{
 position:fixed;
-right:25px;
-bottom:25px;
-width:64px;
-height:64px;
-border-radius:50%;
-background:#25d366;
-display:flex;
+inset:0;
+background:rgba(0,0,0,.96);
+z-index:20000;
+display:none;
 align-items:center;
 justify-content:center;
+padding:30px;
+}
+
+.modal.open{
+display:flex;
+}
+
+.modal-box{
+width:min(1100px,100%);
+height:min(700px,88vh);
+display:grid;
+grid-template-columns:1fr 1fr;
+background:#0e0e0e;
+position:relative;
+overflow:hidden;
+}
+
+.modal-photo{
+height:100%;
+}
+
+.modal-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:grayscale(35%);
+}
+
+.modal-content{
+padding:65px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.modal-content small{
+color:var(--gold);
+letter-spacing:3px;
+font-size:10px;
+}
+
+.modal-content h2{
+font-size:clamp(45px,5vw,80px);
+line-height:.9;
+letter-spacing:-4px;
+margin:17px 0 25px;
+}
+
+.modal-content p{
+color:#aaa;
+line-height:1.7;
+margin-bottom:28px;
+}
+
+.profile-tags{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:35px;
+}
+
+.profile-tags span{
+padding:9px 13px;
+border:1px solid #333;
+border-radius:20px;
+font-size:10px;
+color:#bbb;
+}
+
+.modal-actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.shortlist-btn{
+padding:15px 21px;
+border-radius:30px;
+border:1px solid #555;
+background:transparent;
+color:#fff;
+cursor:pointer;
+font-weight:bold;
+}
+
+.shortlist-btn.active{
+background:var(--gold);
+border-color:var(--gold);
+color:#050505;
+}
+
+.close{
+position:absolute;
+right:20px;
+top:18px;
+z-index:5;
+border:0;
+background:transparent;
+color:#fff;
 font-size:28px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 12px 35px rgba(0,0,0,.45);
-transition:.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.12);
+cursor:pointer;
 }
 
 
-/* FOOTER */
+/* SHORTLIST */
 
-footer{
-padding:35px 6%;
+.shortlist-bar{
+position:fixed;
+right:24px;
+bottom:24px;
+z-index:15000;
+background:#fff;
+color:#050505;
+border-radius:40px;
+padding:14px 20px;
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+.shortlist-panel{
+position:fixed;
+right:0;
+top:0;
+height:100vh;
+width:min(430px,100%);
+background:#0b0b0b;
+z-index:25000;
+padding:35px;
+transform:translateX(100%);
+transition:.35s;
+overflow:auto;
+border-left:1px solid #333;
+}
+
+.shortlist-panel.open{
+transform:translateX(0);
+}
+
+.shortlist-panel h2{
+font-size:38px;
+margin-bottom:25px;
+}
+
+.shortlist-panel p{
+color:#777;
+font-size:13px;
+margin-bottom:20px;
+}
+
+.shortlist-entry{
+border-bottom:1px solid #292929;
+padding:18px 0;
 display:flex;
 justify-content:space-between;
+gap:20px;
+}
+
+.shortlist-entry span{
+color:#777;
 font-size:11px;
-letter-spacing:1px;
+display:block;
+margin-top:5px;
+}
+
+.remove{
+background:transparent;
+border:0;
+color:#777;
+cursor:pointer;
+}
+
+.panel-close{
+background:transparent;
+border:0;
+color:#fff;
+font-size:22px;
+float:right;
+cursor:pointer;
+}
+
+.whatsapp-shortlist{
+display:block;
+margin-top:12px;
+text-align:center;
+text-decoration:none;
+background:#25D366;
+color:#050505;
+padding:16px;
+border-radius:30px;
+font-weight:bold;
+font-size:12px;
+}
+
+
+/* DISCLAIMER */
+
+.disclaimer{
+padding:40px 5%;
+border-top:1px solid #222;
 color:#666;
-}
-
-
-/* ANIMATION */
-
-@keyframes heroIn{
-from{
-opacity:0;
-transform:translateY(45px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+font-size:11px;
+line-height:1.7;
 }
 
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:1000px){
 
-nav{
-height:65px;
-padding:0 5%;
+.talent-grid{
+grid-template-columns:repeat(2,1fr);
 }
+
+.modal-box{
+grid-template-columns:1fr;
+overflow:auto;
+}
+
+.modal-photo{
+height:340px;
+}
+
+.modal-content{
+padding:35px;
+}
+
+}
+
+
+@media(max-width:650px){
 
 nav ul{
 display:none;
 }
 
-.logo{
-font-size:17px;
-}
-
 .hero{
-padding:0 5%;
-background-position:65% center;
+padding:130px 5% 70px;
 }
 
 .hero h1{
-font-size:50px;
-letter-spacing:-2px;
+letter-spacing:-4px;
 }
 
-.hero-description{
+.hero p{
 font-size:16px;
 }
 
+.talent-header{
+display:block;
+}
+
+.talent-header p{
+margin-top:20px;
+}
+
+.talent-grid{
+grid-template-columns:1fr;
+}
+
+.talent-card{
+height:500px;
+}
+
+.talent-info .view{
+opacity:1;
+transform:none;
+}
+
 .intro,
-.arena,
-.collaborations,
+.talents,
 .services{
 padding-left:5%;
 padding-right:5%;
 }
 
-.arena-header{
-display:block;
-}
-
-.arena-header span{
-display:block;
-margin-top:15px;
-}
-
-.arena-layout{
-grid-template-columns:1fr;
-gap:30px;
-}
-
-.arena-image{
-min-height:350px;
-order:-1;
-}
-
-.sport-item{
-grid-template-columns:35px 1fr 30px;
-min-height:74px;
-}
-
-.sport-item h3{
-font-size:30px;
-}
-
-.sport-list:hover .sport-item:not(:hover){
-opacity:1;
-}
-
-.collab-grid{
-grid-template-columns:1fr;
-}
-
-.collab-card{
-height:470px;
-}
-
 .contact h2{
-letter-spacing:-3px;
+letter-spacing:-4px;
 }
 
-footer{
-display:block;
-line-height:2;
+.modal-actions .btn,
+.modal-actions .shortlist-btn{
+width:100%;
+text-align:center;
 }
 
 }
 
 </style>
 </head>
+
 
 <body>
 
@@ -892,9 +705,8 @@ ENORMOUS <span>VENTURE</span>
 </div>
 
 <ul>
-<li><a href="#arena">Sports</a></li>
-<li><a href="#collaborations">Collaborations</a></li>
-<li><a href="#services">Services</a></li>
+<li><a href="#talents">Icons</a></li>
+<li><a href="#services">Collaborations</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -905,30 +717,22 @@ ENORMOUS <span>VENTURE</span>
 
 <div class="hero-content">
 
-<div class="eyebrow">
+<div class="kicker">
 GLOBAL SPORTS COLLABORATIONS
 </div>
 
 <h1>
-THE WORLD'S ICONS.<br>
-<span>YOUR NEXT COLLABORATION.</span>
+ACCESS<br>
+<span>THE ICONS.</span>
 </h1>
 
-<p class="hero-description">
-Connecting brands, events and experiences with legendary names in sport.
+<p>
+Connecting global brands, events and experiences with some of the most recognisable names across world sport.
 </p>
 
-<div class="buttons">
-
-<a href="#arena" class="button">
-EXPLORE TALENTS →
+<a class="btn" href="#talents">
+EXPLORE ICONS →
 </a>
-
-<a href="#contact" class="button button-outline">
-WORK WITH US
-</a>
-
-</div>
 
 </div>
 
@@ -937,394 +741,75 @@ WORK WITH US
 
 <section class="intro">
 
-<div class="section-number">
-01 / WHO WE ARE
+<div class="section-label">
+01 / ENORMOUS VENTURE
 </div>
 
-<div class="big-copy">
-We connect ambitious brands with
-<span>the names that changed the game.</span>
-</div>
+<h2>
+Big names create attention.
+<span>Great collaborations create legacy.</span>
+</h2>
 
 </section>
 
 
-<section class="arena" id="arena">
+<section class="talents" id="talents">
 
-<div class="arena-header">
+<div class="section-label">
+02 / GLOBAL SPORTS ICONS
+</div>
 
-<h2>THE ARENA.</h2>
+<div class="talent-header">
 
-<span>EXPLORE BY SPORT</span>
+<h2>
+EXPLORE<br>THE ICONS.
+</h2>
+
+<p>
+Discover potential collaboration opportunities across football, basketball, boxing, snooker and global sport.
+</p>
 
 </div>
 
 
-<div class="arena-layout">
+<div class="filters">
 
-
-<div class="sport-list">
-
-
-<div
-class="sport-item active"
-data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=90"
-data-name="Football">
-
-<span class="sport-number">01</span>
-<h3>FOOTBALL</h3>
-<span class="sport-arrow">→</span>
+<button class="filter-btn active" data-filter="all">ALL</button>
+<button class="filter-btn" data-filter="football">FOOTBALL</button>
+<button class="filter-btn" data-filter="basketball">BASKETBALL</button>
+<button class="filter-btn" data-filter="boxing">BOXING</button>
+<button class="filter-btn" data-filter="snooker">SNOOKER</button>
+<button class="filter-btn" data-filter="motorsport">MOTORSPORT</button>
 
 </div>
 
 
-<div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=90"
-data-name="Basketball">
-
-<span class="sport-number">02</span>
-<h3>BASKETBALL</h3>
-<span class="sport-arrow">→</span>
-
-</div>
-
-
-<div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=90"
-data-name="Boxing">
-
-<span class="sport-number">03</span>
-<h3>BOXING</h3>
-<span class="sport-arrow">→</span>
-
-</div>
-
-
-<div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=1200&q=90"
-data-name="Snooker">
-
-<span class="sport-number">04</span>
-<h3>SNOOKER</h3>
-<span class="sport-arrow">→</span>
-
-</div>
-
-
-<div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=90"
-data-name="Motorsport">
-
-<span class="sport-number">05</span>
-<h3>MOTORSPORT</h3>
-<span class="sport-arrow">→</span>
-
-</div>
-
-
-<div
-class="sport-item"
-data-image="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=90"
-data-name="More Sports">
-
-<span class="sport-number">06</span>
-<h3>MORE</h3>
-<span class="sport-arrow">→</span>
-
-</div>
-
-
-</div>
-
-
-<div class="arena-image">
-
-<img
-id="arenaPreview"
-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=90"
-alt="Sport preview">
-
-<div class="arena-label">
-
-<small>EXPLORE</small>
-
-<h4 id="arenaName">
-Football
-</h4>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<section class="icons" id="icons">
-
-<div class="section-number">
-02 / FEATURED ICONS
-</div>
-
-<div class="icons-heading">
-
-<div>
-<h2>MEET THE LEGENDS.</h2>
-<p>Explore collaboration possibilities with some of the biggest names in world sport.</p>
-</div>
-
-</div>
-
-
-<div class="icons-grid">
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / PORTUGAL</small>
-<h3>CRISTIANO RONALDO</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / ARGENTINA</small>
-<h3>LIONEL MESSI</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / ENGLAND</small>
-<h3>DAVID BECKHAM</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / BRAZIL</small>
-<h3>RONALDINHO</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / FRANCE</small>
-<h3>KYLIAN MBAPPÉ</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / NORWAY</small>
-<h3>ERLING HAALAND</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / ENGLAND</small>
-<h3>JUDE BELLINGHAM</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual football"></div>
-<div class="icon-info">
-<small>FOOTBALL / SPAIN</small>
-<h3>LAMINE YAMAL</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual basketball"></div>
-<div class="icon-info">
-<small>BASKETBALL / USA</small>
-<h3>LEBRON JAMES</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual basketball"></div>
-<div class="icon-info">
-<small>BASKETBALL / USA</small>
-<h3>MICHAEL JORDAN</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual basketball"></div>
-<div class="icon-info">
-<small>BASKETBALL / USA</small>
-<h3>ALLEN IVERSON</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual boxing"></div>
-<div class="icon-info">
-<small>BOXING / USA</small>
-<h3>MIKE TYSON</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual boxing"></div>
-<div class="icon-info">
-<small>BOXING / PHILIPPINES</small>
-<h3>MANNY PACQUIAO</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual snooker"></div>
-<div class="icon-info">
-<small>SNOOKER / ENGLAND</small>
-<h3>RONNIE O'SULLIVAN</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-<div class="icon-card">
-<div class="icon-visual snooker"></div>
-<div class="icon-info">
-<small>SNOOKER / ENGLAND</small>
-<h3>JUDD TRUMP</h3>
-<a href="#contact">EXPLORE COLLABORATION →</a>
-</div>
-</div>
-
-
-</div>
-<div class="icons-more">
-
-<button id="iconsToggle" type="button">
-VIEW ALL 15 ICONS ↓
-</button>
-
-</div>
-</section>  
-<section class="collaborations" id="collaborations">
-
-<div class="section-number">
-02 / POSSIBILITIES
-</div>
-
-<div class="big-copy">
-More than an appearance.
-<span>Create a moment people remember.</span>
-</div>
-
-
-<div class="collab-grid">
-
-
-<div class="collab-card">
-
-<img
-src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85">
-
-<div class="collab-overlay">
-<small>GLOBAL CAMPAIGNS</small>
-<h3>Brand Endorsements</h3>
-</div>
-
-</div>
-
-
-<div class="collab-card">
-
-<img
-src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85">
-
-<div class="collab-overlay">
-<small>LIVE EXPERIENCES</small>
-<h3>Talent Appearances</h3>
-</div>
-
-</div>
-
-
-<div class="collab-card">
-
-<img
-src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=85">
-
-<div class="collab-overlay">
-<small>EXCLUSIVE ACCESS</small>
-<h3>Private & Corporate Events</h3>
-</div>
-
-</div>
-
-
-</div>
+<div class="talent-grid" id="talentGrid"></div>
 
 </section>
 
 
 <section class="services" id="services">
 
-<div class="section-number">
-03 / COLLABORATE
+<div class="section-label">
+03 / COLLABORATION POSSIBILITIES
 </div>
 
-<div class="big-copy">
-One icon.
-<span>Endless possibilities.</span>
-</div>
+<h2>
+ONE ICON.
+<span>ENDLESS POSSIBILITIES.</span>
+</h2>
 
-
-<div class="service-tags">
+<div class="tags">
 
 <span>Brand Endorsements</span>
+<span>Campaigns</span>
 <span>Meet & Greets</span>
 <span>Corporate Events</span>
 <span>Product Launches</span>
-<span>Private Appearances</span>
-<span>Social Campaigns</span>
 <span>Speaking Engagements</span>
+<span>Private Appearances</span>
+<span>Social Content</span>
 <span>Brand Activations</span>
 
 </div>
@@ -1342,126 +827,610 @@ THEIR LEGACY.
 </h2>
 
 <p>
-Let's create something unforgettable together.
+Tell us who you want to collaborate with.
 </p>
 
+<div class="contact-buttons">
+
 <a
-href="https://wa.me/60178857511"
-target="_blank"
-class="button">
-
-START A COLLABORATION →
-
+class="btn"
+href="https://wa.me/60123663439?text=Hi%20Jiewei%2C%20I%20would%20like%20to%20enquire%20about%20a%20sports%20collaboration."
+target="_blank">
+WHATSAPP JIEWEI →
 </a>
+
+<a
+class="btn"
+href="https://wa.me/60199363751?text=Hi%20Jasper%2C%20I%20would%20like%20to%20enquire%20about%20a%20sports%20collaboration."
+target="_blank">
+WHATSAPP JASPER →
+</a>
+
+</div>
 
 </div>
 
 </section>
 
 
+<div class="disclaimer">
+
+Enormous Venture presents names as potential collaboration opportunities for client consideration. Listing a public figure does not imply that Enormous Venture represents, manages, has signed, or has confirmed the availability of that individual. Availability, fees, usage rights and commercial terms must be separately confirmed before any agreement.
+
+</div>
+
+
+<!-- PROFILE MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" id="closeModal">×</button>
+
+<div class="modal-photo">
+<img id="modalImage" alt="">
+</div>
+
+<div class="modal-content">
+
+<small id="modalSport"></small>
+
+<h2 id="modalName"></h2>
+
+<p id="modalDescription"></p>
+
+<div class="profile-tags">
+
+<span>BRAND CAMPAIGNS</span>
+<span>EVENT APPEARANCES</span>
+<span>CONTENT</span>
+<span>ENDORSEMENTS</span>
+
+</div>
+
+<div class="modal-actions">
+
+<button class="shortlist-btn" id="modalShortlist">
+ADD TO SHORTLIST
+</button>
+
 <a
-class="whatsapp"
-href="https://wa.me/60178857511"
+class="btn"
+id="modalWhatsappJiewei"
 target="_blank">
-
-💬
-
+JIEWEI →
 </a>
 
+<a
+class="btn"
+id="modalWhatsappJasper"
+target="_blank">
+JASPER →
+</a>
 
-<footer>
-
-<div>
-© 2026 ENORMOUS VENTURE
 </div>
 
-<div>
-GLOBAL SPORTS COLLABORATIONS
 </div>
 
-</footer>
+</div>
+
+</div>
+
+
+<!-- SHORTLIST BUTTON -->
+
+<div class="shortlist-bar" id="shortlistBar">
+SHORTLIST (<span id="shortlistCount">0</span>)
+</div>
+
+
+<!-- SHORTLIST PANEL -->
+
+<div class="shortlist-panel" id="shortlistPanel">
+
+<button class="panel-close" id="closeShortlist">×</button>
+
+<h2>Your Shortlist</h2>
+
+<p>
+Select who you would like to contact.
+</p>
+
+<div id="shortlistItems"></div>
+
+<a
+id="shortlistWhatsappJiewei"
+class="whatsapp-shortlist"
+target="_blank">
+WHATSAPP JIEWEI
+</a>
+
+<a
+id="shortlistWhatsappJasper"
+class="whatsapp-shortlist"
+target="_blank">
+WHATSAPP JASPER
+</a>
+
+</div>
 
 
 <script>
 
-/* ARENA IMAGE CHANGE */
+/*
+TEMPORARY SPORT / EDITORIAL IMAGERY.
+Replace with approved/licensed athlete photography later.
+*/
 
-const sportItems =
-document.querySelectorAll('.sport-item');
+const talents = [
 
-const arenaPreview =
-document.getElementById('arenaPreview');
+{
+name:"Cristiano Ronaldo",
+sport:"football",
+country:"Portugal",
+label:"Global Football Icon",
+image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85"
+},
 
-const arenaName =
-document.getElementById('arenaName');
+{
+name:"Lionel Messi",
+sport:"football",
+country:"Argentina",
+label:"Football Legend",
+image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"David Beckham",
+sport:"football",
+country:"England",
+label:"Global Football Icon",
+image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Ronaldinho",
+sport:"football",
+country:"Brazil",
+label:"Football Legend",
+image:"https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Kylian Mbappé",
+sport:"football",
+country:"France",
+label:"Global Football Star",
+image:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Erling Haaland",
+sport:"football",
+country:"Norway",
+label:"Global Football Star",
+image:"https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Jude Bellingham",
+sport:"football",
+country:"England",
+label:"Global Football Star",
+image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Lamine Yamal",
+sport:"football",
+country:"Spain",
+label:"Football Star",
+image:"https://images.unsplash.com/photo-1486286701208-1d58e9338013?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Neymar Jr.",
+sport:"football",
+country:"Brazil",
+label:"Global Football Icon",
+image:"https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Zlatan Ibrahimović",
+sport:"football",
+country:"Sweden",
+label:"Football Legend",
+image:"https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Thierry Henry",
+sport:"football",
+country:"France",
+label:"Football Legend",
+image:"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"LeBron James",
+sport:"basketball",
+country:"USA",
+label:"Basketball Icon",
+image:"https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Michael Jordan",
+sport:"basketball",
+country:"USA",
+label:"Basketball Legend",
+image:"https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Allen Iverson",
+sport:"basketball",
+country:"USA",
+label:"Basketball Legend",
+image:"https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Stephen Curry",
+sport:"basketball",
+country:"USA",
+label:"Basketball Icon",
+image:"https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Mike Tyson",
+sport:"boxing",
+country:"USA",
+label:"Boxing Legend",
+image:"https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Manny Pacquiao",
+sport:"boxing",
+country:"Philippines",
+label:"Boxing Legend",
+image:"https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Floyd Mayweather Jr.",
+sport:"boxing",
+country:"USA",
+label:"Boxing Icon",
+image:"https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Anthony Joshua",
+sport:"boxing",
+country:"United Kingdom",
+label:"Boxing Star",
+image:"https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Ronnie O'Sullivan",
+sport:"snooker",
+country:"England",
+label:"Snooker Legend",
+image:"https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Judd Trump",
+sport:"snooker",
+country:"England",
+label:"Snooker Champion",
+image:"https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Lewis Hamilton",
+sport:"motorsport",
+country:"United Kingdom",
+label:"Motorsport Icon",
+image:"https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=85"
+},
+
+{
+name:"Max Verstappen",
+sport:"motorsport",
+country:"Netherlands",
+label:"Motorsport Champion",
+image:"https://images.unsplash.com/photo-1541773367336-d3f7e54f1b8c?auto=format&fit=crop&w=900&q=85"
+}
+
+];
 
 
-sportItems.forEach(item => {
+const grid = document.getElementById("talentGrid");
 
-item.addEventListener('mouseenter', () => {
+const shortlist = [];
 
-sportItems.forEach(x =>
-x.classList.remove('active')
-);
+let currentTalent = null;
 
-item.classList.add('active');
 
-arenaPreview.style.opacity = 0;
+/* RENDER TALENTS */
 
-setTimeout(() => {
+function renderTalents(filter="all"){
 
-arenaPreview.src =
-item.dataset.image;
+grid.innerHTML="";
 
-arenaName.textContent =
-item.dataset.name;
+talents
+.filter(t => filter==="all" || t.sport===filter)
+.forEach(t=>{
 
-arenaPreview.style.opacity = 1;
+const card=document.createElement("div");
 
-},180);
+card.className="talent-card";
+
+card.innerHTML=`
+
+<img src="${t.image}" alt="${t.name} temporary sport visual">
+
+<div class="talent-info">
+
+<small>
+${t.sport.toUpperCase()} / ${t.country.toUpperCase()}
+</small>
+
+<h3>${t.name.toUpperCase()}</h3>
+
+<div class="view">
+VIEW PROFILE →
+</div>
+
+</div>
+
+`;
+
+card.addEventListener("click",()=>openTalent(t));
+
+grid.appendChild(card);
+
+});
+
+}
+
+renderTalents();
+
+
+/* FILTERS */
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+document.querySelectorAll(".filter-btn")
+.forEach(b=>b.classList.remove("active"));
+
+btn.classList.add("active");
+
+renderTalents(btn.dataset.filter);
 
 });
 
 });
 
 
-/* COLLABORATION SCROLL ANIMATION */
+/* MODAL */
 
-const cards =
-document.querySelectorAll('.collab-card');
+const modal=document.getElementById("modal");
 
-const observer =
-new IntersectionObserver(entries => {
+const modalImage=document.getElementById("modalImage");
+const modalName=document.getElementById("modalName");
+const modalSport=document.getElementById("modalSport");
+const modalDescription=document.getElementById("modalDescription");
+const modalShortlist=document.getElementById("modalShortlist");
 
-entries.forEach(entry => {
+const modalWhatsappJiewei=
+document.getElementById("modalWhatsappJiewei");
 
-if(entry.isIntersecting){
-entry.target.classList.add('show');
+const modalWhatsappJasper=
+document.getElementById("modalWhatsappJasper");
+
+
+function openTalent(t){
+
+currentTalent=t;
+
+modalImage.src=t.image;
+
+modalName.textContent=t.name;
+
+modalSport.textContent=
+`${t.sport.toUpperCase()} / ${t.country.toUpperCase()}`;
+
+modalDescription.textContent=
+`${t.label}. Explore potential brand campaigns, appearances, endorsements, events and other collaboration opportunities subject to availability and commercial terms.`;
+
+const message =
+"I would like to enquire about a potential collaboration with " +
+t.name + ".";
+
+modalWhatsappJiewei.href=
+`https://wa.me/60123663439?text=${encodeURIComponent(
+"Hi Jiewei, " + message
+)}`;
+
+modalWhatsappJasper.href=
+`https://wa.me/60199363751?text=${encodeURIComponent(
+"Hi Jasper, " + message
+)}`;
+
+modal.classList.add("open");
+
+updateModalButton();
+
+}
+
+
+document.getElementById("closeModal")
+.addEventListener("click",()=>modal.classList.remove("open"));
+
+
+modal.addEventListener("click",e=>{
+
+if(e.target===modal){
+modal.classList.remove("open");
 }
 
 });
 
-},{
-threshold:.15
-});
 
-cards.forEach(card =>
-observer.observe(card)
+/* SHORTLIST */
+
+function talentInShortlist(t){
+
+return shortlist.some(x=>x.name===t.name);
+
+}
+
+
+function updateModalButton(){
+
+if(!currentTalent)return;
+
+const active=talentInShortlist(currentTalent);
+
+modalShortlist.classList.toggle("active",active);
+
+modalShortlist.textContent=
+active ? "SHORTLISTED ✓" : "ADD TO SHORTLIST";
+
+}
+
+
+modalShortlist.addEventListener("click",()=>{
+
+if(!currentTalent)return;
+
+const index=shortlist.findIndex(
+x=>x.name===currentTalent.name
 );
 
-  /* VIEW ALL FEATURED ICONS */
+if(index>=0){
 
-const iconsToggle = document.getElementById('iconsToggle');
-const iconsGrid = document.querySelector('.icons-grid');
+shortlist.splice(index,1);
 
-iconsToggle.addEventListener('click', () => {
-
-const isOpen = iconsGrid.classList.toggle('show-all');
-
-if(isOpen){
-iconsToggle.textContent = 'SHOW LESS ↑';
 }else{
-iconsToggle.textContent = 'VIEW ALL 15 ICONS ↓';
+
+shortlist.push(currentTalent);
+
+}
+
+updateShortlist();
+updateModalButton();
+
+});
+
+
+const shortlistCount=
+document.getElementById("shortlistCount");
+
+const shortlistItems=
+document.getElementById("shortlistItems");
+
+const shortlistWhatsappJiewei=
+document.getElementById("shortlistWhatsappJiewei");
+
+const shortlistWhatsappJasper=
+document.getElementById("shortlistWhatsappJasper");
+
+
+function updateShortlist(){
+
+shortlistCount.textContent=shortlist.length;
+
+shortlistItems.innerHTML="";
+
+shortlist.forEach((t,index)=>{
+
+const row=document.createElement("div");
+
+row.className="shortlist-entry";
+
+row.innerHTML=`
+
+<div>
+<strong>${t.name}</strong>
+<span>${t.sport.toUpperCase()} / ${t.country}</span>
+</div>
+
+<button class="remove">
+REMOVE
+</button>
+
+`;
+
+row.querySelector(".remove")
+.addEventListener("click",()=>{
+
+shortlist.splice(index,1);
+
+updateShortlist();
+updateModalButton();
+
+});
+
+shortlistItems.appendChild(row);
+
+});
+
+
+const names=
+shortlist.map(x=>x.name).join(", ");
+
+const shortlistMessage =
+"I would like to enquire about the following sports personalities: " +
+(names || "Please share available sports collaboration opportunities.");
+
+shortlistWhatsappJiewei.href=
+`https://wa.me/60123663439?text=${encodeURIComponent(
+"Hi Jiewei, " + shortlistMessage
+)}`;
+
+shortlistWhatsappJasper.href=
+`https://wa.me/60199363751?text=${encodeURIComponent(
+"Hi Jasper, " + shortlistMessage
+)}`;
+
+}
+
+
+updateShortlist();
+
+
+/* SHORTLIST PANEL */
+
+const panel=
+document.getElementById("shortlistPanel");
+
+document.getElementById("shortlistBar")
+.addEventListener("click",()=>panel.classList.add("open"));
+
+document.getElementById("closeShortlist")
+.addEventListener("click",()=>panel.classList.remove("open"));
+
+
+/* ESC CLOSE */
+
+document.addEventListener("keydown",e=>{
+
+if(e.key==="Escape"){
+
+modal.classList.remove("open");
+panel.classList.remove("open");
+
 }
 
 });
