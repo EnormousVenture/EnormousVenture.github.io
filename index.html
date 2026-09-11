@@ -336,7 +336,221 @@ margin-bottom:8px;
 font-size:28px;
 }
 
+/* FEATURED ICONS */
 
+.icons{
+padding:140px 5.5%;
+background:#050505;
+}
+
+.icons-heading{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:55px;
+}
+
+.icons-heading h2{
+font-size:clamp(48px,6vw,82px);
+font-weight:900;
+letter-spacing:-4px;
+line-height:.95;
+}
+
+.icons-heading p{
+margin-top:20px;
+max-width:600px;
+font-size:17px;
+line-height:1.6;
+color:#888;
+}
+
+.icons-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.icon-card{
+position:relative;
+height:470px;
+overflow:hidden;
+background:#111;
+cursor:pointer;
+}
+
+.icon-visual{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+filter:grayscale(100%);
+transform:scale(1.01);
+transition:
+transform .7s ease,
+filter .6s ease;
+}
+
+/* TEMPORARY SPORT VISUALS */
+
+.icon-visual.football{
+background-image:
+linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05)),
+url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85');
+}
+
+.icon-visual.basketball{
+background-image:
+linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05)),
+url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85');
+}
+
+.icon-visual.boxing{
+background-image:
+linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05)),
+url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=900&q=85');
+}
+
+.icon-visual.snooker{
+background-image:
+linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05)),
+url('https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?auto=format&fit=crop&w=900&q=85');
+}
+
+.icon-card::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.95) 0%,
+rgba(0,0,0,.15) 60%,
+transparent 100%
+);
+pointer-events:none;
+}
+
+.icon-card:hover .icon-visual{
+transform:scale(1.08);
+filter:grayscale(0%);
+}
+
+.icon-info{
+position:absolute;
+left:25px;
+right:25px;
+bottom:25px;
+z-index:2;
+transition:.4s;
+}
+
+.icon-info small{
+display:block;
+font-size:9px;
+letter-spacing:2px;
+color:#e2bb21;
+margin-bottom:10px;
+}
+
+.icon-info h3{
+font-size:26px;
+line-height:1;
+font-weight:900;
+margin-bottom:15px;
+}
+
+.icon-info a{
+display:inline-block;
+color:white;
+font-size:10px;
+font-weight:bold;
+letter-spacing:1.5px;
+text-decoration:none;
+opacity:0;
+transform:translateY(15px);
+transition:.4s;
+}
+
+.icon-card:hover .icon-info{
+transform:translateY(-10px);
+}
+
+.icon-card:hover .icon-info a{
+opacity:1;
+transform:translateY(0);
+}
+/* VIEW ALL ICONS */
+
+.icon-card:nth-child(n+9){
+display:none;
+}
+
+.icons-grid.show-all .icon-card{
+display:block;
+}
+
+.icons-more{
+display:flex;
+justify-content:center;
+margin-top:50px;
+}
+
+.icons-more button{
+background:transparent;
+color:#fff;
+border:1px solid #444;
+border-radius:50px;
+padding:17px 32px;
+font-size:11px;
+font-weight:bold;
+letter-spacing:2px;
+cursor:pointer;
+transition:.3s;
+}
+
+.icons-more button:hover{
+background:#e2bb21;
+border-color:#e2bb21;
+color:#050505;
+transform:translateY(-3px);
+}
+
+/* FEATURED ICONS MOBILE */
+
+@media(max-width:1000px){
+
+.icons-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.icons{
+padding:100px 5%;
+}
+
+.icons-grid{
+grid-template-columns:1fr;
+}
+
+.icon-card{
+height:480px;
+}
+
+.icons-heading h2{
+font-size:48px;
+letter-spacing:-2px;
+}
+
+.icon-info a{
+opacity:1;
+transform:none;
+}
+
+}
+  
 /* COLLABORATIONS */
 
 .collaborations{
@@ -788,6 +1002,185 @@ Football
 </section>
 
 
+
+<section class="icons" id="icons">
+
+<div class="section-number">
+02 / FEATURED ICONS
+</div>
+
+<div class="icons-heading">
+
+<div>
+<h2>MEET THE LEGENDS.</h2>
+<p>Explore collaboration possibilities with some of the biggest names in world sport.</p>
+</div>
+
+</div>
+
+
+<div class="icons-grid">
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / PORTUGAL</small>
+<h3>CRISTIANO RONALDO</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / ARGENTINA</small>
+<h3>LIONEL MESSI</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / ENGLAND</small>
+<h3>DAVID BECKHAM</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / BRAZIL</small>
+<h3>RONALDINHO</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / FRANCE</small>
+<h3>KYLIAN MBAPPÉ</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / NORWAY</small>
+<h3>ERLING HAALAND</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / ENGLAND</small>
+<h3>JUDE BELLINGHAM</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual football"></div>
+<div class="icon-info">
+<small>FOOTBALL / SPAIN</small>
+<h3>LAMINE YAMAL</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual basketball"></div>
+<div class="icon-info">
+<small>BASKETBALL / USA</small>
+<h3>LEBRON JAMES</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual basketball"></div>
+<div class="icon-info">
+<small>BASKETBALL / USA</small>
+<h3>MICHAEL JORDAN</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual basketball"></div>
+<div class="icon-info">
+<small>BASKETBALL / USA</small>
+<h3>ALLEN IVERSON</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual boxing"></div>
+<div class="icon-info">
+<small>BOXING / USA</small>
+<h3>MIKE TYSON</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual boxing"></div>
+<div class="icon-info">
+<small>BOXING / PHILIPPINES</small>
+<h3>MANNY PACQUIAO</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual snooker"></div>
+<div class="icon-info">
+<small>SNOOKER / ENGLAND</small>
+<h3>RONNIE O'SULLIVAN</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+<div class="icon-card">
+<div class="icon-visual snooker"></div>
+<div class="icon-info">
+<small>SNOOKER / ENGLAND</small>
+<h3>JUDD TRUMP</h3>
+<a href="#contact">EXPLORE COLLABORATION →</a>
+</div>
+</div>
+
+
+</div>
+<div class="icons-more">
+
+<button id="iconsToggle" type="button">
+VIEW ALL 15 ICONS ↓
+</button>
+
+</div>
+</section>  
 <section class="collaborations" id="collaborations">
 
 <div class="section-number">
@@ -991,6 +1384,23 @@ threshold:.15
 cards.forEach(card =>
 observer.observe(card)
 );
+
+  /* VIEW ALL FEATURED ICONS */
+
+const iconsToggle = document.getElementById('iconsToggle');
+const iconsGrid = document.querySelector('.icons-grid');
+
+iconsToggle.addEventListener('click', () => {
+
+const isOpen = iconsGrid.classList.toggle('show-all');
+
+if(isOpen){
+iconsToggle.textContent = 'SHOW LESS ↑';
+}else{
+iconsToggle.textContent = 'VIEW ALL 15 ICONS ↓';
+}
+
+});
 
 </script>
 
